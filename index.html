@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Holidays on Hennepin Catalog</title>
+<style>
+  :root { --bg:#ffffff; --fg:#1d2939; --muted:#475467; --card:#fff7e3; --line:#ecdcb8; --accent:#d9372c; --accent-fg:#fff; --warn:#a61b12; --teal:#01657c; --sage:#769d6a; --head:#d9372c; }
+  :root { color-scheme: light; }
+  a { color:var(--teal); }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.45 system-ui,sans-serif; padding-bottom:6.5rem; }
+  header, main { max-width:1040px; margin:0 auto; padding:0 16px; }
+  .banner { background:var(--teal); color:#fff; text-align:center; padding:.35rem 1rem; font-size:.9rem; }
+  h1, h2 { color:var(--head); font-family:Georgia,"Times New Roman",serif; }
+  h1 { margin:1.2rem 0 .2rem; font-size:1.7rem; }
+  h2 { font-size:1.2rem; margin:1.4rem 0 .2rem; }
+  .sub { color:var(--muted); margin:0 0 1rem; }
+  .who { display:grid; gap:.5rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); margin-bottom:1rem; }
+  input, select, textarea, button { font:inherit; padding:.5rem .7rem; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--fg); }
+  button { cursor:pointer; }
+  .chips { display:flex; gap:.4rem; flex-wrap:wrap; margin:.6rem 0; align-items:center; }
+  .chips button.on { background:var(--accent); color:var(--accent-fg); border-color:var(--accent); }
+  .sets { display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); }
+  .set { border:1px dashed var(--sage); background:var(--card); border-radius:10px; padding:12px; display:flex; flex-direction:column; gap:.25rem; }
+  .set .desc { flex:1; }
+  .grid { display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px; display:flex; flex-direction:column; gap:.3rem; }
+  .card.off { opacity:.55; }
+  .card img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; background:var(--line); }
+  .ph { width:100%; aspect-ratio:4/3; border-radius:8px; background:var(--line); }
+  .meta { display:flex; justify-content:space-between; align-items:center; }
+  .price { font-weight:600; }
+  .legend { display:flex; flex-wrap:wrap; gap:.4rem 1rem; margin:.4rem 0 .8rem; padding:0; list-style:none; }
+  .legend li { display:flex; align-items:center; gap:.35rem; font-size:.9rem; color:var(--muted); }
+  .legend img { width:28px; height:28px; border-radius:6px; background:var(--line); }
+  .alert { border:1px solid var(--line); background:var(--card); border-left:4px solid var(--accent); border-radius:8px; padding:.6rem .8rem; margin:0 0 1rem; }
+  .who-err { color:var(--warn); font-weight:600; margin:.3rem 0 1rem; }
+  .items-list { list-style:none; margin:.5rem 0; padding:0; }
+  .items-list li { padding:.5rem 0; border-bottom:1px solid var(--line); }
+  .items-list .row { display:flex; justify-content:space-between; gap:1rem; }
+  .desc { color:var(--muted); font-size:.9rem; }
+  .tag { font-size:.8rem; color:var(--muted); }
+  .qty { display:flex; align-items:center; gap:.5rem; margin-top:.2rem; }
+  .qty button { width:2.2rem; padding:.4rem 0; }
+  .bar { position:fixed; left:0; right:0; bottom:0; background:var(--card); border-top:1px solid var(--line); padding:10px 16px; }
+  .bar-in { max-width:1040px; margin:0 auto; display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+  .left { font-weight:600; } .left.over { color:var(--warn); }
+  .primary { background:var(--accent); color:var(--accent-fg); border-color:var(--accent); font-weight:600; }
+  .primary:disabled, button:disabled { opacity:.45; cursor:default; }
+  dialog { max-width:560px; width:calc(100% - 32px); background:var(--card); color:var(--fg); border:1px solid var(--line); border-radius:12px; }
+  table { width:100%; border-collapse:collapse; } td, th { padding:.25rem .3rem; vertical-align:top; } td:last-child, th:last-child { text-align:right; }
+  th { font-size:.8rem; color:var(--muted); font-weight:500; text-align:left; }
+  .msg { color:var(--warn); min-height:1.2em; }
+  #note { min-height:1.4em; color:var(--muted); margin:.4rem 0 0; }
+</style>
+</head>
+<body>
+<div id="banner" class="banner" hidden></div>
+<header>
+  <h1>Holidays on Hennepin: Decoration Catalog</h1>
+  <p class="sub">Thank you for taking part in Holidays on Hennepin! We're excited to offer you a <span id="budgetTxt"></span> grant for decorations and craft supplies. Browse the catalog below, add what you like, and keep an eye on your remaining balance at the bottom of the screen. When you're ready, review and submit. Our team will take care of the buying and follow up with pickup details once everything has arrived.</p>
+  <p class="sub">Questions? <span class="reply">Contact the committee</span>.</p>
+  <div class="who">
+    <select id="biz" aria-label="Business"><option value="">Select your business…</option></select>
+    <input id="bizOther" placeholder="Your business name" autocomplete="organization" maxlength="100" hidden>
+    <input id="contact" placeholder="Contact name" autocomplete="name">
+    <input id="email" type="email" placeholder="Email" autocomplete="email">
+  </div>
+  <p class="who-err" id="whoErr" role="alert" hidden></p>
+  <div class="alert" id="dup" hidden></div>
+</header>
+<main>
+  <h2>Start from a suggested set</h2>
+  <p class="sub">Not sure where to start? Add a pre-built set for your storefront and customize as you go!</p>
+  <div class="sets" id="sets"></div>
+  <p id="note" role="status" aria-live="polite"></p>
+
+  <h2>Browse all items</h2>
+  <p class="sub">Use "View product" to see the item photo on the retailer's site.</p>
+  <ul class="legend" id="legend" aria-label="Icon legend"></ul>
+  <div class="chips" id="placements" aria-label="Filter by placement"></div>
+  <div class="chips">
+    <label for="cat" class="tag">Category</label><select id="cat"></select>
+    <label for="vendor" class="tag">Vendor</label><select id="vendor"></select>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+<div class="bar"><div class="bar-in">
+  <div class="left" id="left"></div>
+  <div style="display:flex;gap:.5rem"><button id="clear">Clear cart</button><button class="primary" id="review" disabled>Review order</button></div>
+</div></div>
+<dialog id="setDlg">
+  <h2 style="margin-top:0" id="setTitle"></h2>
+  <p class="desc" id="setBlurb"></p>
+  <ul class="items-list" id="setItems"></ul>
+  <div style="display:flex;gap:.5rem;justify-content:flex-end">
+    <button id="setClose">Close</button>
+    <button class="primary" id="setAdd"></button>
+  </div>
+</dialog>
+<dialog id="dlg">
+  <h2 style="margin-top:0">Review your order</h2>
+  <table id="sum"></table>
+  <p class="tag">Our team will choose a similar alternative if an item you selected is out of stock. If you'd rather pick an alternative yourself, uncheck "OK to substitute".</p>
+  <p><label><input type="checkbox" id="vol"> I would like volunteer help with decorating (free, not part of the grant)</label></p>
+  <p><textarea id="notes" rows="2" style="width:100%" placeholder="Notes for the committee (optional)"></textarea></p>
+  <p class="msg" id="err"></p>
+  <div style="display:flex;gap:.5rem;justify-content:flex-end">
+    <button id="back">Keep editing</button>
+    <button class="primary" id="send">Submit order</button>
+  </div>
+</dialog>
+<script src="config.js"></script>
+<script>
+(async function () {
+  const CFG = window.HOH_CONFIG, B = CFG.budget, URL_ = CFG.submitUrl;
+  const $ = id => document.getElementById(id), money = n => "$" + n.toFixed(2);
+  let items, presets, biz;
+  try {
+    [items, presets, biz] = await Promise.all(["items.json", "presets.json", "businesses.json"].map(f => fetch(f).then(r => { if (!r.ok) throw new Error(f); return r.json(); })));
+  } catch (e) {
+    document.body.textContent = "Could not load catalog data. If you opened this file directly, serve the folder instead (see README).";
+    return;
+  }
+  const byId = Object.fromEntries(items.map(i => [i.id, i]));
+  const avail = i => i.available !== false;
+  const cap = i => i.max || 99;
+  const PLACEMENTS = ["All", "Door", "Window", "Counter", "Exterior", "Interior", "Ceiling", "Paint and create"];
+  const PLABEL = { Counter: "Counter / Tabletop" };
+  const KEY = "hoh-cart-v1";
+  // Category icons stand in until an item has its own "image" in items.json.
+  const ICONS = { "Ribbon":"ribbon", "Lights":"lights", "Ornaments":"ornaments", "Greenery":"greenery", "Tabletop":"tabletop", "Hanging":"hanging", "Craft supplies":"craft" };
+
+  document.querySelectorAll(".reply").forEach(el => {
+    if (CFG.replyEmail) { const a = document.createElement("a"); a.href = "mailto:" + CFG.replyEmail; a.textContent = CFG.replyEmail; el.replaceChildren(a); }
+  });
+  const replyHtml = (lead) => { const f = document.createDocumentFragment(); f.append(lead); if (CFG.replyEmail) { const a = document.createElement("a"); a.href = "mailto:" + CFG.replyEmail; a.textContent = CFG.replyEmail; f.append(a); } else f.append("the committee"); return f; };
+  const orderUrl = t => "order.html?o=" + encodeURIComponent(t);
+  const LEG = $("legend");
+  Object.keys(ICONS).forEach(c => { const li = document.createElement("li"); const im = Object.assign(document.createElement("img"), { src: "img/cat-" + ICONS[c] + ".svg", alt: "" }); li.append(im, c); LEG.appendChild(li); });
+  if (CFG.banner) { $("banner").hidden = false; $("banner").textContent = CFG.banner; }
+  $("budgetTxt").textContent = money(B);
+  const OTHER = "__other";
+  biz.forEach(b => { const o = document.createElement("option"); o.value = b.id; o.textContent = b.name; $("biz").appendChild(o); });
+  $("biz").add(new Option("My business isn't listed", OTHER));
+  const syncOther = () => { $("bizOther").hidden = $("biz").value !== OTHER; if (!$("bizOther").hidden) $("bizOther").focus(); };
+  let dupToken = "";
+  const showDup = t => {
+    dupToken = t;
+    const d = $("dup"), f = document.createDocumentFragment();
+    f.append("You've already submitted an order for this business. To review it, use the link in your confirmation email. To make changes, ");
+    f.append(replyHtml("email "), ".");
+    d.replaceChildren(f); d.hidden = false; renderBar();
+  };
+  const clearDup = () => { dupToken = ""; $("dup").hidden = true; renderBar(); };
+  // Asks the Sheet whether this business already has an active order. Returns true if it does.
+  async function checkDup() {
+    const bid = $("biz").value, typed = $("bizOther").value.trim();
+    if (!URL_ || !bid || (bid === OTHER && !typed)) { clearDup(); return false; }
+    try {
+      const r = await fetch(URL_ + "?check=" + encodeURIComponent(bid) + "&name=" + encodeURIComponent(typed));
+      const j = await r.json();
+      if (j.ok && j.submitted) { showDup(j.token); return true; }
+    } catch (e) {}
+    clearDup(); return false;
+  }
+  $("biz").onchange = () => { syncOther(); clearDup(); checkDup(); };
+  $("bizOther").onchange = () => { clearDup(); checkDup(); };
+  const pre = new URLSearchParams(location.search).get("b"); if (pre && biz.some(b => b.id === pre)) $("biz").value = pre;
+  $("bizOther").hidden = $("biz").value !== OTHER;
+  if ($("biz").value) setTimeout(() => checkDup(), 0);
+
+  let cart = {}, placement = "All", category = "All", vendor = "All";
+  try { const s = JSON.parse(localStorage.getItem(KEY) || "{}"); for (const k in s) if (byId[k] && avail(byId[k]) && s[k] > 0) cart[k] = Math.min(s[k], cap(byId[k])); } catch (e) {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (e) {} };
+
+  const cats = ["All", ...new Set(items.map(i => i.category))];
+  const vendors = ["All", ...new Set(items.map(i => i.vendor).filter(Boolean))];
+  cats.forEach(c => $("cat").add(new Option(c === "All" ? "All categories" : c, c)));
+  vendors.forEach(v => $("vendor").add(new Option(v === "All" ? "All vendors" : v, v)));
+  $("cat").onchange = () => { category = $("cat").value; renderGrid(); };
+  $("vendor").onchange = () => { vendor = $("vendor").value; renderGrid(); };
+
+  const total = () => Object.keys(cart).reduce((s, k) => s + cart[k] * byId[k].price, 0);
+  const say = t => { $("note").textContent = t; };
+
+  function setQty(i, q) {
+    q = Math.max(0, Math.min(cap(i), q));
+    const delta = (q - (cart[i.id] || 0)) * i.price;
+    if (delta > 0 && total() + delta > B + 0.001) { say("That would go over the " + money(B) + " grant. Remove something first."); return; }
+    if (q === 0) delete cart[i.id]; else cart[i.id] = q;
+    save(); say(""); renderGrid(); renderBar();
+  }
+
+  function addPreset(p) {
+    const skipped = []; let cost = 0; const plan = [];
+    p.items.forEach(c => {
+      const i = byId[c.id];
+      if (!i || !avail(i)) { skipped.push(i ? i.name : c.id); return; }
+      const q = Math.min(c.qty, cap(i) - (cart[i.id] || 0));
+      if (q > 0) { plan.push([i, q]); cost += q * i.price; }
+    });
+    if (total() + cost > B + 0.001) { say("The " + p.name + " set needs " + money(cost) + " but only " + money(B - total()) + " is left. Remove some items first."); return; }
+    plan.forEach(([i, q]) => { cart[i.id] = (cart[i.id] || 0) + q; });
+    save(); renderGrid(); renderBar();
+    say("Added the " + p.name + " set (" + money(cost) + ")." + (skipped.length ? " Not included, currently unavailable: " + skipped.join(", ") + "." : ""));
+  }
+
+  function renderSets() {
+    $("sets").innerHTML = "";
+    presets.forEach(p => {
+      const cost = p.items.reduce((s, c) => s + (byId[c.id] && avail(byId[c.id]) ? byId[c.id].price * c.qty : 0), 0);
+      const d = document.createElement("div"); d.className = "set";
+      const n = document.createElement("strong"); n.textContent = p.name;
+      const ds = document.createElement("div"); ds.className = "desc"; ds.textContent = p.blurb;
+      const v = document.createElement("button"); v.textContent = "View items"; v.onclick = () => openSet(p, cost);
+      const b = document.createElement("button"); b.textContent = "Add set · " + money(cost); b.onclick = () => addPreset(p);
+      const r = document.createElement("div"); r.style.cssText = "display:flex;gap:.4rem;flex-wrap:wrap"; r.append(v, b);
+      d.append(n, ds, r); $("sets").appendChild(d);
+    });
+  }
+
+  function openSet(p, cost) {
+    $("setTitle").textContent = p.name + " set";
+    $("setBlurb").textContent = p.blurb || "";
+    const ul = $("setItems"); ul.innerHTML = "";
+    p.items.forEach(c => {
+      const i = byId[c.id]; if (!i) return;
+      const li = document.createElement("li");
+      const row = document.createElement("div"); row.className = "row";
+      const nm = document.createElement("strong"); nm.textContent = (c.qty > 1 ? c.qty + " × " : "") + i.name;
+      const pr = document.createElement("span"); pr.className = "price"; pr.textContent = money(i.price * c.qty);
+      row.append(nm, pr);
+      const ds = document.createElement("div"); ds.className = "desc"; ds.textContent = i.description || "";
+      li.append(row, ds);
+      if (!avail(i)) { const u = document.createElement("div"); u.className = "tag"; u.textContent = "Currently unavailable (not added)"; li.appendChild(u); }
+      else if (i.url) { const t = document.createElement("div"); t.className = "tag"; t.append((i.vendor || "") + " · "); const a = document.createElement("a"); a.href = i.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "View product"; t.appendChild(a); li.appendChild(t); }
+      ul.appendChild(li);
+    });
+    $("setAdd").textContent = "Add set · " + money(cost);
+    $("setAdd").onclick = () => { $("setDlg").close(); addPreset(p); };
+    $("setDlg").showModal();
+  }
+  $("setClose").onclick = () => $("setDlg").close();
+
+  function renderPlacements() {
+    $("placements").innerHTML = "";
+    PLACEMENTS.forEach(p => { const b = document.createElement("button"); b.textContent = PLABEL[p] || p; if (p === placement) b.className = "on"; b.onclick = () => { placement = p; renderPlacements(); renderGrid(); }; $("placements").appendChild(b); });
+  }
+
+  function renderGrid() {
+    $("grid").innerHTML = "";
+    items.filter(i => (placement === "All" || (i.placements || []).includes(placement)) && (category === "All" || i.category === category) && (vendor === "All" || i.vendor === vendor)).forEach(i => {
+      const on = avail(i);
+      const d = document.createElement("div"); d.className = "card" + (on ? "" : " off");
+      const pic = i.image || (ICONS[i.category] ? "img/cat-" + ICONS[i.category] + ".svg" : "");
+      const img = pic ? Object.assign(document.createElement("img"), { src: pic, alt: i.image ? "" : i.category + " icon", loading: "lazy" }) : Object.assign(document.createElement("div"), { className: "ph" });
+      const name = document.createElement("strong"); name.textContent = i.name;
+      const meta = document.createElement("div"); meta.className = "meta";
+      const pr = document.createElement("span"); pr.className = "price"; pr.textContent = money(i.price);
+      meta.append(pr);
+      const ds = document.createElement("div"); ds.className = "desc"; ds.textContent = i.description || "";
+      const tg = document.createElement("div"); tg.className = "tag";
+      tg.textContent = (i.vendor || "") + (i.max ? " · limited, max " + i.max : "");
+      if (i.url) { const a = document.createElement("a"); a.href = i.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "View product"; tg.append(" · ", a); }
+      const q = document.createElement("div"); q.className = "qty";
+      if (on) {
+        const m = document.createElement("button"); m.textContent = "−"; m.setAttribute("aria-label", "Remove one " + i.name); m.onclick = () => setQty(i, (cart[i.id] || 0) - 1);
+        const n = document.createElement("span"); n.textContent = cart[i.id] || 0;
+        const p = document.createElement("button"); p.textContent = "+"; p.setAttribute("aria-label", "Add one " + i.name); p.onclick = () => setQty(i, (cart[i.id] || 0) + 1);
+        q.append(m, n, p);
+      } else { const u = document.createElement("span"); u.className = "tag"; u.textContent = "Currently unavailable"; q.appendChild(u); }
+      d.append(img, name, meta, ds, tg, q); $("grid").appendChild(d);
+    });
+  }
+
+  function renderBar() {
+    const t = total();
+    $("left").textContent = money(B - t) + " remaining of " + money(B);
+    $("left").className = "left" + (t > B ? " over" : "");
+    $("review").disabled = t <= 0 || !!dupToken; $("clear").disabled = t <= 0;
+  }
+  $("clear").onclick = () => { cart = {}; save(); say(""); renderGrid(); renderBar(); };
+
+  const subs = {};
+  const lines = () => Object.keys(cart).map(k => ({ id: k, name: byId[k].name, vendor: byId[k].vendor || "", price: byId[k].price, url: byId[k].url || "", qty: cart[k], subOk: subs[k] !== false }));
+
+  $("review").onclick = async () => {
+    $("review").disabled = true;
+    const dup = await checkDup();
+    renderBar();
+    if (dup) { $("dup").scrollIntoView({ behavior: "smooth", block: "center" }); return; }
+    $("err").textContent = "";
+    const t = $("sum"); t.innerHTML = "";
+    const h = t.insertRow(); ["Item", "OK to substitute", "Price"].forEach(x => { const c = document.createElement("th"); c.textContent = x; h.appendChild(c); });
+    lines().forEach(l => {
+      const tr = t.insertRow(); tr.insertCell().textContent = l.qty + " × " + l.name;
+      const c = tr.insertCell(); const cb = document.createElement("input"); cb.type = "checkbox"; cb.checked = l.subOk; cb.setAttribute("aria-label", "OK to substitute " + l.name); cb.onchange = () => { subs[l.id] = cb.checked; }; c.appendChild(cb);
+      tr.insertCell().textContent = money(l.qty * l.price);
+    });
+    const tr = t.insertRow(); tr.style.fontWeight = "600"; tr.insertCell().textContent = "Total"; tr.insertCell(); tr.insertCell().textContent = money(total());
+    $("dlg").showModal();
+  };
+  $("back").onclick = () => $("dlg").close();
+
+  $("send").onclick = async () => {
+    const bid = $("biz").value, contact = $("contact").value.trim(), email = $("email").value.trim();
+    const typed = $("bizOther").value.trim().replace(/\s+/g, " ");
+    if (!bid || (bid === OTHER && !typed) || !contact || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      $("dlg").close();
+      $("whoErr").textContent = "Please review your contact information and make sure your business name, contact name, and email are properly entered.";
+      $("whoErr").hidden = false;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    $("whoErr").hidden = true;
+    const listed = bid === OTHER ? null : biz.find(b => b.id === bid);
+    const order = { businessId: listed ? listed.id : OTHER, businessName: listed ? listed.name : typed, contact, email, notes: $("notes").value, volunteerHelp: $("vol").checked, lines: lines() };
+    if (!URL_) { download(order); $("err").textContent = "No submit URL configured (prototype). Order downloaded as CSV instead."; return; }
+    $("send").disabled = true;
+    try {
+      // text/plain avoids a CORS preflight, which Apps Script does not handle.
+      const r = await fetch(URL_, { method: "POST", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(order) });
+      const j = await r.json();
+      if (!j.ok && j.error === "already_submitted") { $("dlg").close(); showDup(j.token); $("send").disabled = false; return; }
+      if (!j.ok) throw new Error(j.error);
+      cart = {}; save();
+      try { sessionStorage.setItem("hoh-last", JSON.stringify({ email, emailed: !!j.emailed })); } catch (e) {}
+      location.href = orderUrl(j.token) + "&new=1";
+    } catch (e) { $("err").textContent = "Submit failed: " + e.message + ". Try again or contact the committee."; $("send").disabled = false; }
+  };
+  function download(o) {
+    const q = v => '"' + String(v).replace(/"/g, '""') + '"';
+    const csv = "business,contact,email,item_id,item,vendor,qty,unit_price,ok_to_substitute,volunteer_help\n" + o.lines.map(l => [o.businessName, o.contact, o.email, l.id, l.name, l.vendor, l.qty, l.price, l.subOk, o.volunteerHelp].map(q).join(",")).join("\n");
+    const a = document.createElement("a"); a.href = "data:text/csv;charset=utf-8," + encodeURIComponent(csv); a.download = "hoh-order.csv"; a.click();
+  }
+
+  renderSets(); renderPlacements(); renderGrid(); renderBar();
+})();
+</script>
+</body>
+</html>

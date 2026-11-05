@@ -1,0 +1,316 @@
+[
+ {
+  "id": "R01",
+  "name": "Red Wired Velvet Ribbon, 3.5\" x 8.3yd (Celebrate It)",
+  "category": "Ribbon",
+  "placements": [
+   "Door",
+   "Window",
+   "Interior"
+  ],
+  "palette": [
+   "red"
+  ],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/product/35-x-83yd-red-wired-velvet-ribbon-by-celebrate-it-10828594",
+  "price": 15.99,
+  "description": "Wired velvet ribbon"
+ },
+ {
+  "id": "R02",
+  "name": "Gold Wired Glitter Ribbon, 1.5\" x 10yd (Celebrate It)",
+  "category": "Ribbon",
+  "placements": [
+   "Door",
+   "Window",
+   "Interior"
+  ],
+  "palette": [
+   "gold"
+  ],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/product/15-x-10yd-gold-wired-glitter-ribbon-by-celebrate-it-10828596",
+  "price": 13.99,
+  "description": "Wired glitter ribbon"
+ },
+ {
+  "id": "R03",
+  "name": "Burgundy Satin Dot Ribbon, 9ft (Wondershop)",
+  "category": "Ribbon",
+  "placements": [
+   "Door",
+   "Window",
+   "Interior"
+  ],
+  "palette": [
+   "red"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/-/A-94992039",
+  "price": 7.0,
+  "description": "Burgundy satin ribbon"
+ },
+ {
+  "id": "L01",
+  "name": "Warm White LED String Lights, 18ct (Ashland)",
+  "category": "Lights",
+  "placements": [
+   "Window",
+   "Interior",
+   "Counter"
+  ],
+  "palette": [
+   "white"
+  ],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/product/18ct-warm-white-led-string-lights-by-ashland-10233236",
+  "price": 5.99,
+  "description": "18ct warm white LED string lights"
+ },
+ {
+  "id": "L02",
+  "name": "Battery Operated Christmas Lights 2 Pack, 17 FT 50 LED Warm White",
+  "category": "Lights",
+  "placements": [
+   "Window",
+   "Interior",
+   "Exterior"
+  ],
+  "palette": [
+   "white"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B098B21784",
+  "price": 14.99,
+  "description": "2 pack battery warm white lights"
+ },
+ {
+  "id": "O01",
+  "name": "50ct Shatter-Resistant Round Ornament Set (Wondershop)",
+  "category": "Ornaments",
+  "placements": [
+   "Window",
+   "Interior",
+   "Counter"
+  ],
+  "palette": [
+   "red",
+   "green",
+   "gold"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/-/A-86214030",
+  "price": 15.0,
+  "description": "50 shatter-resistant ornaments"
+ },
+ {
+  "id": "O02",
+  "name": "50 Pack 2.2\" Shatterproof Ball Ornaments (Ashland)",
+  "category": "Ornaments",
+  "placements": [
+   "Window",
+   "Interior",
+   "Counter"
+  ],
+  "palette": [
+   "red",
+   "green",
+   "gold"
+  ],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/product/50-pack-22-shatterproof-ball-ornaments-by-ashland-10821095",
+  "price": 29.99,
+  "description": "50 shatterproof ornaments"
+ },
+ {
+  "id": "G01",
+  "name": "9ft Christmas Canadian Garland, unlit (Wondershop)",
+  "category": "Greenery",
+  "placements": [
+   "Door",
+   "Window",
+   "Counter"
+  ],
+  "palette": [
+   "green"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/-/A-94111975",
+  "price": 8.0,
+  "description": "9 ft artificial pine garland"
+ },
+ {
+  "id": "G02",
+  "name": "20\" Flocked Pine Artificial Wreath (Wondershop)",
+  "category": "Greenery",
+  "placements": [
+   "Door",
+   "Interior"
+  ],
+  "palette": [
+   "green",
+   "white"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/-/A-89602742",
+  "price": 10.0,
+  "description": "20 inch flocked pine wreath"
+ },
+ {
+  "id": "G03",
+  "name": "24\" Lightly Flocked Pine Wreath with Pinecones (Wondershop)",
+  "category": "Greenery",
+  "placements": [
+   "Door",
+   "Interior"
+  ],
+  "palette": [
+   "green",
+   "red"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/-/A-89602781",
+  "price": 20.0,
+  "description": "24 inch wreath with pinecones and berries"
+ },
+ {
+  "id": "T01",
+  "name": "24\" Mini Artificial Christmas Tree (Wondershop)",
+  "category": "Tabletop",
+  "placements": [
+   "Counter"
+  ],
+  "palette": [
+   "green"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/-/A-90052632",
+  "price": 10.0,
+  "description": "Tabletop mini tree"
+ },
+ {
+  "id": "H01",
+  "name": "Snowflake Decorations, Paper Hanging, White, 14-pc",
+  "category": "Hanging",
+  "placements": [
+   "Ceiling",
+   "Window"
+  ],
+  "palette": [
+   "white"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B07WLPT238",
+  "price": 5.99,
+  "description": "14 white paper snowflakes"
+ },
+ {
+  "id": "H02",
+  "name": "White Tissue Hanging Paper Pom Poms, 12 pcs",
+  "category": "Hanging",
+  "placements": [
+   "Ceiling",
+   "Interior"
+  ],
+  "palette": [
+   "white"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B07G5SXQKN",
+  "price": 9.99,
+  "description": "12 white tissue pom poms"
+ },
+ {
+  "id": "C01",
+  "name": "Santa Snow Spray Flocking, 13 oz",
+  "category": "Craft supplies",
+  "placements": [
+   "Window",
+   "Paint and create"
+  ],
+  "palette": [
+   "white"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B0FXMZCH2K",
+  "price": 11.99,
+  "description": "Snow flocking spray"
+ },
+ {
+  "id": "C02",
+  "name": "VILMA Christmas Liquid Chalk Markers, 8 pack",
+  "category": "Craft supplies",
+  "placements": [
+   "Window",
+   "Paint and create"
+  ],
+  "palette": [
+   "white",
+   "red",
+   "green",
+   "gold"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B0H7J29Y6W",
+  "price": 8.99,
+  "description": "Washable window chalk markers"
+ },
+ {
+  "id": "R04",
+  "name": "Teal Velvet Wired Ribbon, 2.5\" x 10yd",
+  "category": "Ribbon",
+  "placements": [
+   "Interior",
+   "Window"
+  ],
+  "palette": [
+   "teal"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B09XQKLLZX",
+  "price": 15.99,
+  "description": "Teal wired velvet ribbon"
+ },
+ {
+  "id": "C03",
+  "name": "Natural Kraft Paper Roll (Creatology)",
+  "category": "Craft supplies",
+  "placements": [
+   "Paint and create",
+   "Window"
+  ],
+  "palette": [
+   "natural"
+  ],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/product/natural-kraft-paper-roll-by-creatology--10566589",
+  "price": 7.49,
+  "description": "Natural kraft paper roll"
+ },
+ {
+  "id": "C04",
+  "name": "16 Color Matte Acrylic Paint Value Pack (Craft Smart)",
+  "category": "Craft supplies",
+  "placements": [
+   "Paint and create"
+  ],
+  "palette": [],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/product/16-color-matte-acrylic-paint-value-pack-by-craft-smart-10437751",
+  "price": 9.49,
+  "description": "16 color acrylic paint"
+ },
+ {
+  "id": "C05",
+  "name": "Wet Paint Beginner Acrylic Painting Kit",
+  "category": "Craft supplies",
+  "placements": [
+   "Paint and create"
+  ],
+  "palette": [],
+  "vendor": "Wet Paint",
+  "url": "https://wetpaintart.com/wet-paint-beginner-acrylic-painting-kit/",
+  "price": 19.95,
+  "description": "Beginner acrylic painting kit"
+ }
+]

@@ -1,0 +1,154 @@
+[
+ {
+  "id": "p-door",
+  "name": "Door",
+  "placement": "Door",
+  "blurb": "Wreath, garland and ribbon for the entrance.",
+  "items": [
+   {
+    "id": "G03",
+    "qty": 1
+   },
+   {
+    "id": "G01",
+    "qty": 1
+   },
+   {
+    "id": "R01",
+    "qty": 1
+   },
+   {
+    "id": "R02",
+    "qty": 1
+   }
+  ]
+ },
+ {
+  "id": "p-window",
+  "name": "Window",
+  "placement": "Window",
+  "blurb": "Lights, ornaments and snowflakes for the glass.",
+  "items": [
+   {
+    "id": "L02",
+    "qty": 1
+   },
+   {
+    "id": "H01",
+    "qty": 1
+   },
+   {
+    "id": "O01",
+    "qty": 1
+   },
+   {
+    "id": "C02",
+    "qty": 1
+   }
+  ]
+ },
+ {
+  "id": "p-counter",
+  "name": "Counter / Tabletop",
+  "placement": "Counter",
+  "blurb": "A small tree with lights and ribbon for the counter.",
+  "items": [
+   {
+    "id": "T01",
+    "qty": 1
+   },
+   {
+    "id": "L01",
+    "qty": 1
+   },
+   {
+    "id": "G01",
+    "qty": 1
+   },
+   {
+    "id": "R03",
+    "qty": 1
+   }
+  ]
+ },
+ {
+  "id": "p-exterior",
+  "name": "Exterior",
+  "placement": "Exterior",
+  "blurb": "Lights and a wreath for the outside of the storefront.",
+  "items": [
+   {
+    "id": "L02",
+    "qty": 2
+   },
+   {
+    "id": "G02",
+    "qty": 1
+   }
+  ]
+ },
+ {
+  "id": "p-interior",
+  "name": "Interior",
+  "placement": "Interior",
+  "blurb": "Pom poms, ornaments, lights and teal ribbon for inside.",
+  "items": [
+   {
+    "id": "H02",
+    "qty": 1
+   },
+   {
+    "id": "O01",
+    "qty": 1
+   },
+   {
+    "id": "L01",
+    "qty": 1
+   },
+   {
+    "id": "R04",
+    "qty": 1
+   }
+  ]
+ },
+ {
+  "id": "p-ceiling",
+  "name": "Ceiling",
+  "placement": "Ceiling",
+  "blurb": "Hanging snowflakes and pom poms.",
+  "items": [
+   {
+    "id": "H01",
+    "qty": 2
+   },
+   {
+    "id": "H02",
+    "qty": 2
+   }
+  ]
+ },
+ {
+  "id": "p-paint",
+  "name": "Paint and create",
+  "placement": "Paint and create",
+  "blurb": "Supplies to make your own decorations.",
+  "items": [
+   {
+    "id": "C04",
+    "qty": 1
+   },
+   {
+    "id": "C03",
+    "qty": 1
+   },
+   {
+    "id": "C02",
+    "qty": 1
+   },
+   {
+    "id": "C01",
+    "qty": 1
+   }
+  ]
+ }
+]

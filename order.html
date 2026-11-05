@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Your Order | Holidays on Hennepin</title>
+<style>
+  :root { --bg:#ffffff; --fg:#1d2939; --muted:#475467; --card:#fff7e3; --line:#ecdcb8; --accent:#d9372c; --warn:#a61b12; --teal:#01657c; --head:#d9372c; color-scheme: light; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.45 system-ui,sans-serif; }
+  main { max-width:820px; margin:0 auto; padding:0 16px 3rem; }
+  a { color:var(--teal); }
+  h1, h2 { color:var(--head); font-family:Georgia,"Times New Roman",serif; }
+  h1 { margin:1.2rem 0 .4rem; font-size:1.7rem; }
+  .thanks { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:8px; padding:.8rem 1rem; margin:1rem 0; }
+  .muted { color:var(--muted); }
+  .warn { color:var(--warn); font-weight:600; }
+  table { width:100%; border-collapse:collapse; margin:1rem 0; }
+  th, td { padding:.5rem .4rem; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  th { font-size:.85rem; color:var(--muted); font-weight:600; }
+  td.r, th.r { text-align:right; }
+  .wrap { overflow-x:auto; }
+  button { font:inherit; padding:.5rem .9rem; border:1px solid var(--line); border-radius:8px; background:var(--card); cursor:pointer; }
+  @media print { .noprint { display:none; } }
+</style>
+</head>
+<body>
+<main>
+  <h1 id="title">Your order</h1>
+  <div id="thanks" class="thanks" hidden></div>
+  <p id="status" class="muted" role="status">Loading your order…</p>
+  <div id="order" hidden>
+    <p class="muted" id="meta"></p>
+    <div class="wrap"><table id="tbl"></table></div>
+    <p id="vol"></p>
+    <p id="notes"></p>
+    <p class="warn" id="inactive" hidden>This order has been replaced or cancelled.</p>
+    <p class="muted">This page is view-only. <span class="reply">Contact the committee</span> to change your order. Our team will follow up with pickup details once your items have arrived.</p>
+    <p class="noprint"><button id="print">Print this page</button> <a href="index.html">Back to the catalog</a></p>
+  </div>
+</main>
+<script src="config.js"></script>
+<script>
+(async function () {
+  const CFG = window.HOH_CONFIG, $ = id => document.getElementById(id), money = n => "$" + Number(n).toFixed(2);
+  const q = new URLSearchParams(location.search), token = q.get("o");
+  document.querySelectorAll(".reply").forEach(el => {
+    if (CFG.replyEmail) { const a = document.createElement("a"); a.href = "mailto:" + CFG.replyEmail; a.textContent = "Email " + CFG.replyEmail; el.replaceChildren(a); }
+  });
+  const fail = m => { $("status").textContent = m; $("status").className = "warn"; };
+  if (!token || !CFG.submitUrl) return fail("We couldn't find this order. Check the link in your confirmation email.");
+  let j;
+  try { j = await (await fetch(CFG.submitUrl + "?o=" + encodeURIComponent(token))).json(); } catch (e) { return fail("We couldn't load your order right now. Please try again in a minute."); }
+  if (!j.ok) return fail("We couldn't find this order. Check the link in your confirmation email.");
+
+  $("title").textContent = "Order for " + j.business;
+  $("meta").textContent = "Submitted " + j.date;
+  const t = $("tbl");
+  const hr = t.insertRow();
+  [["Qty"], ["Item"], ["Vendor"], ["OK to substitute"], ["Price", "r"]].forEach(([x, c]) => { const th = document.createElement("th"); th.textContent = x; if (c) th.className = c; hr.appendChild(th); });
+  j.lines.forEach(l => {
+    const r = t.insertRow();
+    r.insertCell().textContent = l.qty;
+    const c = r.insertCell();
+    if (l.url && /^https:\/\//.test(l.url)) { const a = document.createElement("a"); a.href = l.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = l.name; c.appendChild(a); } else c.textContent = l.name;
+    r.insertCell().textContent = l.vendor || "";
+    r.insertCell().textContent = l.subOk === false ? "No" : "Yes";
+    const p = r.insertCell(); p.className = "r"; p.textContent = money(l.qty * l.price);
+  });
+  const tr = t.insertRow(); tr.style.fontWeight = "600";
+  tr.insertCell(); tr.insertCell().textContent = "Total"; tr.insertCell(); tr.insertCell();
+  const tc = tr.insertCell(); tc.className = "r"; tc.textContent = money(j.total) + " of " + money(j.budget);
+  $("vol").textContent = "Volunteer help with decorating: " + (j.volunteerHelp ? "Yes, please" : "No");
+  if (j.notes) $("notes").textContent = "Your notes: " + j.notes; else $("notes").hidden = true;
+  if (!j.active) $("inactive").hidden = false;
+  $("print").onclick = () => window.print();
+  $("status").hidden = true; $("order").hidden = false;
+
+  if (q.get("new") === "1") {
+    let last = {}; try { last = JSON.parse(sessionStorage.getItem("hoh-last") || "{}"); } catch (e) {}
+    const th = $("thanks"); th.hidden = false;
+    const b = document.createElement("strong"); b.textContent = "Thank you! ";
+    th.append(b, last.email && last.emailed
+      ? "A confirmation email is on its way to " + last.email + ". "
+      : "Your order is saved, but we couldn't send a confirmation email, so bookmark this page. ",
+      "Our team will follow up with pickup details once your items have arrived. You can review your order below any time using this page's link.");
+  }
+})();
+</script>
+</body>
+</html>
