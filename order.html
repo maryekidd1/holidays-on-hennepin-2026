@@ -33,6 +33,7 @@
   <div id="order" hidden>
     <p class="muted" id="meta"></p>
     <div class="wrap"><table id="tbl"></table></div>
+    <p id="ship"></p>
     <p id="vol"></p>
     <p id="notes"></p>
     <p class="warn" id="inactive" hidden>This order has been replaced or cancelled.</p>
@@ -71,6 +72,7 @@
   const tr = t.insertRow(); tr.style.fontWeight = "600";
   tr.insertCell(); tr.insertCell().textContent = "Total"; tr.insertCell(); tr.insertCell();
   const tc = tr.insertCell(); tc.className = "r"; tc.textContent = money(j.total) + " of " + money(j.budget);
+  if (j.shipping) $("ship").textContent = "Shipping to: " + j.shipping; else $("ship").hidden = true;
   $("vol").textContent = "Volunteer help with decorating: " + (j.volunteerHelp ? "Yes, please" : "No");
   if (j.notes) $("notes").textContent = "Your notes: " + j.notes; else $("notes").hidden = true;
   if (!j.active) $("inactive").hidden = false;

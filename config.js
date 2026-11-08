@@ -6,5 +6,5 @@ window.HOH_CONFIG = {
   // Public reply address shown in page copy (questions, order changes). "" shows "the committee" instead.
   replyEmail: "technology@thewedge.org",
   // Apps Script web app URL (apps-script/Code.gs). While empty, submitting downloads the order as a CSV instead.
-  submitUrl: "https://script.google.com/macros/s/AKfycbxf9JhHx14olhl2o_uwD5Mmz-KnIPtOIWew5ZvPQT-0CQlWJwFepNmJWyqw36F8Uyf4/exec"
+  submitUrl: "https://script.google.com/macros/s/AKfycbxhv0GyKPa9IT9RecKyOsmfkKhU_lLSZsQDFjlq5feJs02tsGUN312W4nlmI9IcjPFM/exec"
 };
