@@ -81,7 +81,7 @@
   ],
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B098B21784",
-  "price": 14.99,
+  "price": 19.99,
   "description": "2 pack battery warm white lights"
  },
  {
@@ -201,7 +201,7 @@
   ],
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B07WLPT238",
-  "price": 5.99,
+  "price": 7.99,
   "description": "14 white paper snowflakes"
  },
  {
@@ -233,7 +233,7 @@
   ],
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B0FXMZCH2K",
-  "price": 11.99,
+  "price": 11.13,
   "description": "Snow flocking spray"
  },
  {
@@ -252,7 +252,7 @@
   ],
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B0H7J29Y6W",
-  "price": 8.99,
+  "price": 9.99,
   "description": "Washable window chalk markers"
  },
  {
@@ -268,7 +268,7 @@
   ],
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B09XQKLLZX",
-  "price": 15.99,
+  "price": 16.99,
   "description": "Teal wired velvet ribbon"
  },
  {
@@ -311,6 +311,370 @@
   "vendor": "Wet Paint",
   "url": "https://wetpaintart.com/wet-paint-beginner-acrylic-painting-kit/",
   "price": 19.95,
-  "description": "Beginner acrylic painting kit"
+  "description": "Beginner acrylic painting kit",
+  "available": false
+ },
+ {
+  "id": "L03",
+  "name": "25ct LED C9 Christmas String Lights Warm White with Green Wire (Wondershop)",
+  "category": "Lights",
+  "placements": [
+   "Exterior",
+   "Window"
+  ],
+  "palette": [
+   "white"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/25ct-led-c9-classic-glow-indoor-outdoor-christmas-string-lights-warm-white-with-green-wire-wondershop-8482-ul-listed/-/A-87327641",
+  "price": 11.0,
+  "description": "25 warm white LED C9 bulbs, 16 ft lit length, indoor/outdoor, plug-in"
+ },
+ {
+  "id": "L04",
+  "name": "25ct LED Faceted C9 Christmas String Lights Warm White with Green Wire (Wondershop)",
+  "category": "Lights",
+  "placements": [
+   "Exterior",
+   "Window"
+  ],
+  "palette": [
+   "white"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/25ct-led-c9-faceted-christmas-string-lights-warm-white-with-green-wire-wondershop-8482-indoor-outdoor-ul-listed-electric/-/A-84273451",
+  "price": 11.0,
+  "description": "25 warm white faceted LED C9 bulbs, 16 ft lit length, indoor/outdoor, plug-in"
+ },
+ {
+  "id": "L05",
+  "name": "50ct LED Smooth Sphere Christmas String Lights Warm White with Green Wire (Wondershop)",
+  "category": "Lights",
+  "placements": [
+   "Exterior",
+   "Window",
+   "Interior"
+  ],
+  "palette": [
+   "white"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/50ct-led-smooth-sphere-christmas-string-lights-warm-white-with-green-wire-wondershop-8482/-/A-84273478",
+  "price": 11.0,
+  "description": "50 warm white LED sphere lights, 16.3 ft lit length, indoor/outdoor, plug-in"
+ },
+ {
+  "id": "G04",
+  "name": "9' Pre-Lit Artificial Pine Bough Garland with LED Lights (Wondershop)",
+  "category": "Greenery",
+  "placements": [
+   "Exterior",
+   "Door",
+   "Window"
+  ],
+  "palette": [
+   "green"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/9-39-christmas-pre-lit-artificial-pine-bough-garland-green-with-led-lights-wondershop-8482/-/A-94111972",
+  "price": 20.0,
+  "description": "9 ft pre-lit pine bough garland with LED lights, indoor/outdoor, plug-in"
+ },
+ {
+  "id": "R05",
+  "name": "Large Wired Red Velvet Bow, 12\" x 18\" (Rocky Mountain Goods)",
+  "category": "Ribbon",
+  "placements": [
+   "Exterior",
+   "Door",
+   "Window"
+  ],
+  "palette": [
+   "red"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/Rocky-Mountain-Goods-Large-Wired/dp/B01N0KE1FA",
+  "price": 13.95,
+  "description": "Large red wired velvet bow with attachment tie, listed indoor/outdoor and waterproof"
+ },
+ {
+  "id": "R06",
+  "name": "FUNARTY Red Velvet Christmas Bows, 6 Pack, 9\" x 12\"",
+  "category": "Ribbon",
+  "placements": [
+   "Exterior",
+   "Door",
+   "Window"
+  ],
+  "palette": [
+   "red"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/FUNARTY-Christmas-Waterproof-Decorative-Treetopper/dp/B0887W9BMR",
+  "price": 12.99,
+  "description": "6 premade red velvet bows, listed waterproof"
+ },
+ {
+  "id": "L06",
+  "name": "Flickering Flameless Candle, 12 Pcs, Battery Operated (Homemory)",
+  "category": "Lights",
+  "placements": [
+   "Counter",
+   "Interior"
+  ],
+  "palette": [
+   "white"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/clp/B01EDKGFGU",
+  "price": 8.99,
+  "description": "12 battery-operated LED flickering tea lights"
+ },
+ {
+  "id": "L07",
+  "name": "YAUNGEL Window Candles, 12 Pack LED Battery Operated with Remote",
+  "category": "Lights",
+  "placements": [
+   "Window"
+  ],
+  "palette": [
+   "white"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/YAUNGEL-Operated-Christmas-Removable-Decorations/dp/B094V5F6H6",
+  "price": 39.98,
+  "description": "12 battery LED window candles with remote, timer and suction cups"
+ },
+ {
+  "id": "H03",
+  "name": "207 PCS Snowflake Window Clings, Double-Sided, Reusable, 9 Sheets",
+  "category": "Hanging",
+  "placements": [
+   "Window"
+  ],
+  "palette": [
+   "white"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/clp/B0FPMN678S",
+  "price": 7.99,
+  "description": "207 reusable static-cling snowflakes for glass, no glue"
+ },
+ {
+  "id": "O03",
+  "name": "24PCS Glitter Christmas Ornaments Set, Shatterproof, Blue Green",
+  "category": "Ornaments",
+  "placements": [
+   "Window",
+   "Interior",
+   "Counter"
+  ],
+  "palette": [
+   "teal"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/Christmas-Ornaments-Decorations-Shatterproof-Decorative/dp/B0DD12FGYK",
+  "price": 21.59,
+  "description": "24 shatterproof glitter ornaments in blue-green, multiple sizes"
+ },
+ {
+  "id": "C06",
+  "name": "POSCA Paint Marker Set Medium 4 Color Mixed Metallic",
+  "category": "Craft supplies",
+  "placements": [
+   "Window",
+   "Paint and create"
+  ],
+  "palette": [
+   "gold",
+   "silver",
+   "white"
+  ],
+  "vendor": "Wet Paint",
+  "url": "https://wetpaintart.com/posca-paint-marker-set-medium-4-color-mixed-metallic/",
+  "price": 18.59,
+  "description": "4 medium paint markers: gold, silver, black, white"
+ },
+ {
+  "id": "C07",
+  "name": "Giftsland Craft Pack Metallic",
+  "category": "Craft supplies",
+  "placements": [
+   "Paint and create"
+  ],
+  "palette": [
+   "gold",
+   "silver"
+  ],
+  "vendor": "Wet Paint",
+  "url": "https://wetpaintart.com/giftsland-craft-pack-metallic/",
+  "price": 8.0,
+  "description": "Metallic paper craft pack, 5 sheets 8x11 and 5 sheets 3.5x9"
+ },
+ {
+  "id": "C08",
+  "name": "Giftsland Origami Pack Glitter, 20 Pack",
+  "category": "Craft supplies",
+  "placements": [
+   "Paint and create",
+   "Ceiling"
+  ],
+  "palette": [
+   "gold",
+   "silver"
+  ],
+  "vendor": "Wet Paint",
+  "url": "https://wetpaintart.com/giftsland-origami-pack-glitter-20-pack/",
+  "price": 8.9,
+  "description": "20 glitter origami sheets"
+ },
+ {
+  "id": "O04",
+  "name": "50ct Shatter-Resistant Round Christmas Tree Ornament Set Red/Gold (Wondershop)",
+  "category": "Ornaments",
+  "placements": [
+   "Window",
+   "Interior",
+   "Counter"
+  ],
+  "palette": [
+   "red",
+   "gold"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/50ct-shatter-resistant-round-christmas-tree-ornament-set-red-gold-wondershop-8482-durable-indoor-decor/-/A-84718910",
+  "price": 15.0,
+  "description": "50 shatter-resistant round ornaments in red and gold"
+ },
+ {
+  "id": "O05",
+  "name": "50ct Shatter-Resistant Round Christmas Tree Ornament Set Red/Gold/Pink/Green (Wondershop)",
+  "category": "Ornaments",
+  "placements": [
+   "Window",
+   "Interior",
+   "Counter"
+  ],
+  "palette": [
+   "red",
+   "gold",
+   "green",
+   "pink"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/50ct-christmas-tree-ornament-set-red-gold-pink-green-wondershop-8482/-/A-93490648",
+  "price": 15.0,
+  "description": "50 shatter-resistant round ornaments in red, gold, pink and green"
+ },
+ {
+  "id": "T02",
+  "name": "24\" Mini Tinsel Artificial Tree, Champagne (Wondershop)",
+  "category": "Tabletop",
+  "placements": [
+   "Counter"
+  ],
+  "palette": [
+   "gold"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/-/A-95005228",
+  "price": 10.0,
+  "description": "Unlit 24 in champagne tinsel tabletop tree with brown base"
+ },
+ {
+  "id": "T03",
+  "name": "24\" Unlit Flocked Mini Artificial Tree (Wondershop)",
+  "category": "Tabletop",
+  "placements": [
+   "Counter"
+  ],
+  "palette": [
+   "green",
+   "white"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/-/A-85378469",
+  "price": 10.0,
+  "description": "Unlit 24 in green tree with white flocking and round black base"
+ },
+ {
+  "id": "T04",
+  "name": "3' Pre-Lit Potted Balsam Fir Mini Artificial Tree, Warm White LED (Wondershop)",
+  "category": "Tabletop",
+  "placements": [
+   "Counter"
+  ],
+  "palette": [
+   "green"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/-/A-89662008",
+  "price": 35.0,
+  "description": "3 ft tree with 35 warm white LED lights in a black plastic pot, 20 in wide"
+ },
+ {
+  "id": "T05",
+  "name": "24\" Pre-Lit Tabletop Mini Tree, Warm White LED (Joiedomi)",
+  "category": "Tabletop",
+  "placements": [
+   "Counter"
+  ],
+  "palette": [
+   "green",
+   "gold"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B0DBZ3NWYQ",
+  "price": 19.99,
+  "description": "24 in pre-lit green tree with warm white LED lights and gold base"
+ },
+ {
+  "id": "T06",
+  "name": "3ft Hinged Artificial Mini Tree, Unlit (DUUDO)",
+  "category": "Tabletop",
+  "placements": [
+   "Counter"
+  ],
+  "palette": [
+   "green"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B0CBWZ736T",
+  "price": 19.98,
+  "description": "3 ft unlit green tree with hinged metal branches and foldable base"
+ },
+ {
+  "id": "H04",
+  "name": "Tinsel Foil Fringe Curtain, 3.2ft x 8.2ft, 2 Pack (GREATRIL)",
+  "category": "Hanging",
+  "placements": [
+   "Door",
+   "Interior",
+   "Window"
+  ],
+  "palette": [
+   "pink"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B08MJ8SRHG",
+  "price": 9.99,
+  "description": "2 metallic foil fringe tinsel curtains, 3.2 ft x 8.2 ft each, adhesive tape to hang"
+ },
+ {
+  "id": "O06",
+  "name": "20 Pcs Mirrored Disco Ball Ornaments, Assorted Sizes (MTLEE)",
+  "category": "Ornaments",
+  "placements": [
+   "Window",
+   "Interior",
+   "Counter"
+  ],
+  "palette": [
+   "silver"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B09MW87J57",
+  "price": 14.99,
+  "description": "20 silver mirrored disco ball ornaments in assorted sizes, each with a hook, plus elastic thread"
  }
 ]

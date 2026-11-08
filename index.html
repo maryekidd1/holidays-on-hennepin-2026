@@ -61,19 +61,14 @@
 <header>
   <h1>Holidays on Hennepin: Decoration Catalog</h1>
   <p class="sub">Thank you for taking part in Holidays on Hennepin! We're excited to offer you a <span id="budgetTxt"></span> grant for decorations and craft supplies. Browse the catalog below, add what you like, and keep an eye on your remaining balance at the bottom of the screen. When you're ready, review and submit. Please place your order here, not on the retailers' websites. Our team will take care of the buying and ship your items directly to the address you provide.</p>
-  <p class="sub">Questions? <span class="reply">Contact the committee</span>.</p>
+  <p class="sub"><b>Please submit your order by Friday, Nov 13.</b> Orders after Nov 13 may delay your decoration day.</p>
+  <p class="sub">Questions about the catalog? Please contact us at <span class="reply">the committee email</span> and we will get back to you as soon as possible!</p>
   <div class="who">
     <select id="biz" aria-label="Business"><option value="">Select your business…</option></select>
     <input id="bizOther" placeholder="Your business name" autocomplete="organization" maxlength="100" hidden>
     <input id="contact" placeholder="Contact name" autocomplete="name">
     <input id="email" type="email" placeholder="Email" autocomplete="email">
-    <input id="shipLine1" placeholder="Shipping street address" autocomplete="shipping address-line1" maxlength="100">
-    <input id="shipLine2" placeholder="Suite or unit (optional)" autocomplete="shipping address-line2" maxlength="60">
-    <input id="shipCity" placeholder="City" value="Minneapolis" autocomplete="shipping address-level2" maxlength="60">
-    <input id="shipState" placeholder="State" value="MN" autocomplete="shipping address-level1" maxlength="2">
-    <input id="shipZip" placeholder="ZIP code" inputmode="numeric" autocomplete="shipping postal-code" maxlength="10">
   </div>
-  <p class="sub">We will ship your items to this address. Please use one where someone can accept packages.</p>
   <p class="who-err" id="whoErr" role="alert" hidden></p>
   <div class="alert" id="dup" hidden></div>
 </header>
@@ -86,6 +81,7 @@
   <h2>Browse all items</h2>
   <p class="sub">Use "View product" to see the item photo on the retailer's site.</p>
   <ul class="legend" id="legend" aria-label="Icon legend"></ul>
+  <input id="search" type="search" placeholder="Search items (e.g. red ribbon, lights, wreath)" aria-label="Search items" autocomplete="off" style="width:100%;max-width:420px;margin:.4rem 0">
   <div class="chips" id="placements" aria-label="Filter by placement"></div>
   <div class="chips">
     <label for="cat" class="tag">Category</label><select id="cat"></select>
@@ -111,6 +107,15 @@
   <table id="sum"></table>
   <p class="tag">Our team will choose a similar alternative if an item you selected is out of stock. If you'd rather pick an alternative yourself, uncheck "OK to substitute".</p>
   <p><label><input type="checkbox" id="vol"> I would like volunteer help with decorating (free, not part of the grant)</label></p>
+  <h3 style="margin-bottom:.3rem">Shipping address</h3>
+  <div class="who" style="margin-bottom:.3rem">
+    <input id="shipLine1" placeholder="Shipping street address" autocomplete="shipping address-line1" maxlength="100">
+    <input id="shipLine2" placeholder="Suite or unit (optional)" autocomplete="shipping address-line2" maxlength="60">
+    <input id="shipCity" placeholder="City" value="Minneapolis" autocomplete="shipping address-level2" maxlength="60">
+    <input id="shipState" placeholder="State" value="MN" autocomplete="shipping address-level1" maxlength="2">
+    <input id="shipZip" placeholder="ZIP code" inputmode="numeric" autocomplete="shipping postal-code" maxlength="10">
+  </div>
+  <p class="tag">We will ship your items to this address. Please use one where someone can accept packages.</p>
   <p><textarea id="notes" rows="2" style="width:100%" placeholder="Special shipping instructions or anything else we should know, such as delivery hours or if your business cannot receive packages (optional)"></textarea></p>
   <p class="msg" id="err"></p>
   <div style="display:flex;gap:.5rem;justify-content:flex-end">
@@ -178,7 +183,7 @@
   $("bizOther").hidden = $("biz").value !== OTHER;
   if ($("biz").value) setTimeout(() => checkDup(), 0);
 
-  let cart = {}, placement = "All", category = "All", vendor = "All";
+  let cart = {}, placement = "All", category = "All", vendor = "All", query = "";
   try { const s = JSON.parse(localStorage.getItem(KEY) || "{}"); for (const k in s) if (byId[k] && avail(byId[k]) && s[k] > 0) cart[k] = Math.min(s[k], cap(byId[k])); } catch (e) {}
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (e) {} };
 
@@ -188,6 +193,14 @@
   vendors.forEach(v => $("vendor").add(new Option(v === "All" ? "All vendors" : v, v)));
   $("cat").onchange = () => { category = $("cat").value; renderGrid(); };
   $("vendor").onchange = () => { vendor = $("vendor").value; renderGrid(); };
+  $("search").oninput = () => { query = $("search").value; renderGrid(); };
+  // Every word typed must appear somewhere in the item's name, description, category, vendor, color or placement.
+  const matches = i => {
+    const words = query.toLowerCase().split(/\s+/).filter(Boolean);
+    if (!words.length) return true;
+    const hay = [i.name, i.description, i.category, i.vendor, ...(i.palette || []), ...(i.placements || [])].join(" ").toLowerCase();
+    return words.every(w => hay.includes(w));
+  };
 
   const total = () => Object.keys(cart).reduce((s, k) => s + cart[k] * byId[k].price, 0);
   const say = t => { $("note").textContent = t; };
@@ -258,7 +271,9 @@
 
   function renderGrid() {
     $("grid").innerHTML = "";
-    items.filter(i => (placement === "All" || (i.placements || []).includes(placement)) && (category === "All" || i.category === category) && (vendor === "All" || i.vendor === vendor)).forEach(i => {
+    const shown = items.filter(i => (placement === "All" || (i.placements || []).includes(placement)) && (category === "All" || i.category === category) && (vendor === "All" || i.vendor === vendor) && matches(i));
+    if (!shown.length) { const e = document.createElement("p"); e.className = "sub"; e.textContent = "No items match your search or filters. Try fewer words or clear a filter."; $("grid").appendChild(e); }
+    shown.forEach(i => {
       const on = avail(i);
       const d = document.createElement("div"); d.className = "card" + (on ? "" : " off");
       const pic = i.image || (ICONS[i.category] ? "img/cat-" + ICONS[i.category] + ".svg" : "");
@@ -316,13 +331,14 @@
     const typed = $("bizOther").value.trim().replace(/\s+/g, " ");
     const ship = { line1: $("shipLine1").value.trim(), line2: $("shipLine2").value.trim(), city: $("shipCity").value.trim(), state: $("shipState").value.trim().toUpperCase(), zip: $("shipZip").value.trim() };
     const shipOk = ship.line1 && ship.city && /^[A-Z]{2}$/.test(ship.state) && /^\d{5}(-\d{4})?$/.test(ship.zip);
-    if (!bid || (bid === OTHER && !typed) || !contact || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !shipOk) {
+    if (!bid || (bid === OTHER && !typed) || !contact || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       $("dlg").close();
-      $("whoErr").textContent = "Please review your contact information and make sure your business name, contact name, email, and shipping address (street, city, 2-letter state, ZIP) are properly entered.";
+      $("whoErr").textContent = "Please review your contact information and make sure your business name, contact name, and email are properly entered.";
       $("whoErr").hidden = false;
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
+    if (!shipOk) { $("err").textContent = "Please enter a complete shipping address (street, city, 2-letter state, ZIP)."; return; }
     $("whoErr").hidden = true;
     const listed = bid === OTHER ? null : biz.find(b => b.id === bid);
     const order = { businessId: listed ? listed.id : OTHER, businessName: listed ? listed.name : typed, contact, email, shipping: ship, notes: $("notes").value, volunteerHelp: $("vol").checked, lines: lines() };
