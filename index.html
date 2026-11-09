@@ -14,7 +14,9 @@
   header, main { max-width:1040px; margin:0 auto; padding:0 16px; }
   .banner { background:var(--teal); color:#fff; text-align:center; padding:.35rem 1rem; font-size:.9rem; }
   h1, h2 { color:var(--head); font-family:Georgia,"Times New Roman",serif; }
-  h1 { margin:1.2rem 0 .2rem; font-size:1.7rem; }
+  h1 { margin:0; font-size:1.7rem; }
+  .brand { display:flex; align-items:center; gap:14px; margin:1rem 0 .6rem; }
+  .brand img { width:84px; height:auto; flex:none; }
   h2 { font-size:1.2rem; margin:1.4rem 0 .2rem; }
   .sub { color:var(--muted); margin:0 0 1rem; }
   .who { display:grid; gap:.5rem; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); margin-bottom:1rem; }
@@ -59,8 +61,9 @@
 <body>
 <div id="banner" class="banner" hidden></div>
 <header>
-  <h1>Holidays on Hennepin: Decoration Catalog</h1>
-  <p class="sub">Thank you for taking part in Holidays on Hennepin! We're excited to offer you a <span id="grantTxt"></span> grant. Choose up to <span id="budgetTxt"></span> of decorations and craft supplies from this catalog; the rest of your grant covers shipping and tax. Browse the catalog below, add what you like, and keep an eye on your remaining balance at the bottom of the screen. When you're ready, review and submit. Please place your order here, not on the retailers' websites. Our team will take care of the buying and ship your items directly to the address you provide.</p>
+  <div class="brand"><img src="img/hoh-logo.png" alt="Holidays on Hennepin logo" width="84" height="88"><h1>Holidays on Hennepin: Decoration Catalog</h1></div>
+  <p class="sub">Thank you for taking part in Holidays on Hennepin! We're excited to offer you a <span id="grantTxt"></span> grant. Choose up to <span id="budgetTxt"></span> of decorations and craft supplies from this catalog; the rest of your grant covers shipping and tax.</p>
+  <p class="sub">Browse the catalog below, add what you like, and keep an eye on your remaining balance at the bottom of the screen. When you're ready, review and submit. Please place your order here, not on the retailers' websites. Our team will take care of the buying and ship your items directly to the address you provide.</p>
   <p class="sub"><b>Please submit your order by Tuesday, Nov 17.</b> Orders after Nov 17 may delay your decoration day.</p>
   <p class="sub">Questions about the catalog? Please contact us at <span class="reply">the committee email</span> and we will get back to you as soon as possible!</p>
   <div class="who">

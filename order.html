@@ -12,7 +12,8 @@
   main { max-width:820px; margin:0 auto; padding:0 16px 3rem; }
   a { color:var(--teal); }
   h1, h2 { color:var(--head); font-family:Georgia,"Times New Roman",serif; }
-  h1 { margin:1.2rem 0 .4rem; font-size:1.7rem; }
+  h1 { margin:.6rem 0 .4rem; font-size:1.7rem; }
+  .logo { display:block; width:84px; height:auto; margin-top:1rem; }
   .thanks { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:8px; padding:.8rem 1rem; margin:1rem 0; }
   .muted { color:var(--muted); }
   .warn { color:var(--warn); font-weight:600; }
@@ -27,6 +28,7 @@
 </head>
 <body>
 <main>
+  <img class="logo" src="img/hoh-logo.png" alt="Holidays on Hennepin logo" width="84" height="88">
   <h1 id="title">Your order</h1>
   <div id="thanks" class="thanks" hidden></div>
   <p id="status" class="muted" role="status">Loading your order…</p>
