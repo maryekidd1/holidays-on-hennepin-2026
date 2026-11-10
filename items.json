@@ -82,7 +82,17 @@
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B098B21784",
   "price": 19.99,
-  "description": "2 pack battery warm white lights"
+  "description": "2 pack battery warm white lights",
+  "options": {
+   "label": "Color",
+   "choices": [
+    "Warm white",
+    "Orange purple",
+    "Cool white",
+    "Multicolor",
+    "Orange purple & warm white"
+   ]
+  }
  },
  {
   "id": "O01",
@@ -101,7 +111,29 @@
   "vendor": "Target",
   "url": "https://www.target.com/p/-/A-86214030",
   "price": 15.0,
-  "description": "50 shatter-resistant ornaments"
+  "description": "50 shatter-resistant ornaments. Choose a color",
+  "options": {
+   "label": "Color",
+   "choices": [
+    "Blue/Silver",
+    "Champagne",
+    "Red/Gold",
+    "Red/Silver/White",
+    "Silver",
+    "Navy/Silver",
+    "Red",
+    "Dark Blue/Silver",
+    "Dark Green/Light Green",
+    "Pink/Hot Pink/Light Pink",
+    "Red/Gold/Pink/Green",
+    "Bright Green/Red",
+    "Sage/Champagne/Red",
+    "Pastel Multicolor Glitter",
+    "Gold/Silver",
+    "Red/Green",
+    "Silver/Champagne/Brown"
+   ]
+  }
  },
  {
   "id": "O02",
@@ -120,7 +152,18 @@
   "vendor": "Michaels",
   "url": "https://www.michaels.com/product/50-pack-22-shatterproof-ball-ornaments-by-ashland-10821095",
   "price": 29.99,
-  "description": "50 shatterproof ornaments"
+  "description": "50 shatterproof ornaments. Choose a color",
+  "options": {
+   "label": "Color",
+   "choices": [
+    "Red/White Mix",
+    "Pink/Green Mix",
+    "Blue/Cream/Red/Green/Burgundy Flocked",
+    "Black/Gold/Silver/Brown/Green Mix",
+    "Brown/Gold Mix",
+    "Blue/White Mix"
+   ]
+  }
  },
  {
   "id": "G01",
@@ -202,7 +245,14 @@
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B07WLPT238",
   "price": 7.99,
-  "description": "14 white paper snowflakes"
+  "description": "14 white paper snowflakes",
+  "options": {
+   "label": "Color",
+   "choices": [
+    "White",
+    "Silver"
+   ]
+  }
  },
  {
   "id": "H02",
@@ -218,7 +268,17 @@
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B07G5SXQKN",
   "price": 9.99,
-  "description": "12 white tissue pom poms"
+  "description": "12 white tissue pom poms",
+  "options": {
+   "label": "Color",
+   "choices": [
+    "White",
+    "Burgundy",
+    "Navy blue",
+    "Red/white/blue",
+    "Mint"
+   ]
+  }
  },
  {
   "id": "C01",
@@ -233,7 +293,7 @@
   ],
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B0FXMZCH2K",
-  "price": 11.13,
+  "price": 10.89,
   "description": "Snow flocking spray"
  },
  {
@@ -269,7 +329,44 @@
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B09XQKLLZX",
   "price": 16.99,
-  "description": "Teal wired velvet ribbon"
+  "description": "Teal wired velvet ribbon",
+  "options": {
+   "label": "Color",
+   "choices": [
+    {
+     "name": "Turquoise blue",
+     "price": 16.99
+    },
+    {
+     "name": "Copper",
+     "price": 16.99
+    },
+    {
+     "name": "Light champagne",
+     "price": 16.99
+    },
+    {
+     "name": "Light pink",
+     "price": 9.99
+    },
+    {
+     "name": "Red & gold",
+     "price": 16.99
+    },
+    {
+     "name": "Champagne & gold",
+     "price": 9.99
+    },
+    {
+     "name": "Emerald green & gold",
+     "price": 14.99
+    },
+    {
+     "name": "Rose gold",
+     "price": 14.99
+    }
+   ]
+  }
  },
  {
   "id": "C03",
@@ -314,7 +411,14 @@
   "vendor": "Target",
   "url": "https://www.target.com/p/25ct-led-c9-classic-glow-indoor-outdoor-christmas-string-lights-warm-white-with-green-wire-wondershop-8482-ul-listed/-/A-87327641",
   "price": 11.0,
-  "description": "25 warm white LED C9 bulbs, 16 ft lit length, indoor/outdoor, plug-in"
+  "description": "25 warm white LED C9 bulbs, 16 ft lit length, indoor/outdoor, plug-in",
+  "options": {
+   "label": "Color",
+   "choices": [
+    "Multicolored",
+    "White"
+   ]
+  }
  },
  {
   "id": "L04",
@@ -330,7 +434,15 @@
   "vendor": "Target",
   "url": "https://www.target.com/p/25ct-led-c9-faceted-christmas-string-lights-warm-white-with-green-wire-wondershop-8482-indoor-outdoor-ul-listed-electric/-/A-84273451",
   "price": 11.0,
-  "description": "25 warm white faceted LED C9 bulbs, 16 ft lit length, indoor/outdoor, plug-in"
+  "description": "25 warm white faceted LED C9 bulbs, 16 ft lit length, indoor/outdoor, plug-in",
+  "options": {
+   "label": "Color",
+   "choices": [
+    "Cool white",
+    "Multicolor",
+    "Warm white"
+   ]
+  }
  },
  {
   "id": "L05",
@@ -347,7 +459,14 @@
   "vendor": "Target",
   "url": "https://www.target.com/p/50ct-led-smooth-sphere-christmas-string-lights-warm-white-with-green-wire-wondershop-8482/-/A-84273478",
   "price": 11.0,
-  "description": "50 warm white LED sphere lights, 16.3 ft lit length, indoor/outdoor, plug-in"
+  "description": "50 warm white LED sphere lights, 16.3 ft lit length, indoor/outdoor, plug-in",
+  "options": {
+   "label": "Color",
+   "choices": [
+    "Multicolor",
+    "Warm white"
+   ]
+  }
  },
  {
   "id": "G04",
@@ -431,7 +550,60 @@
   "vendor": "Amazon",
   "url": "https://www.amazon.com/clp/B01EDKGFGU",
   "price": 8.99,
-  "description": "12 battery-operated LED flickering tea lights. Batteries included"
+  "description": "12 battery-operated LED flickering tea lights. Batteries included",
+  "options": {
+   "label": "Color",
+   "choices": [
+    {
+     "name": "Warm White Glow - White Body",
+     "price": 8.99
+    },
+    {
+     "name": "7 Color Changing Glow - White Body",
+     "price": 8.99
+    },
+    {
+     "name": "Warm White Glow - Ivory Body",
+     "price": 8.99
+    },
+    {
+     "name": "Bright Amber Glow - White Body",
+     "price": 9.49
+    },
+    {
+     "name": "Cool White Glow - White Body",
+     "price": 7.99
+    },
+    {
+     "name": "Blue",
+     "price": 8.99
+    },
+    {
+     "name": "Black",
+     "price": 8.99
+    },
+    {
+     "name": "Pink",
+     "price": 8.99
+    },
+    {
+     "name": "Purple",
+     "price": 8.99
+    },
+    {
+     "name": "Red",
+     "price": 8.99
+    },
+    {
+     "name": "Light Blue",
+     "price": 8.99
+    },
+    {
+     "name": "Green",
+     "price": 8.99
+    }
+   ]
+  }
  },
  {
   "id": "L07",
@@ -446,7 +618,14 @@
   "vendor": "Amazon",
   "url": "https://www.amazon.com/YAUNGEL-Operated-Christmas-Removable-Decorations/dp/B094V5F6H6",
   "price": 49.99,
-  "description": "12 battery LED window candles with remote, timer and suction cups. 2 AA Batteries not included"
+  "description": "12 battery LED window candles with remote, timer and suction cups. 2 AA Batteries not included",
+  "options": {
+   "label": "Base",
+   "choices": [
+    "Gold base",
+    "Silver base"
+   ]
+  }
  },
  {
   "id": "H03",
@@ -515,44 +694,6 @@
   "description": "20 glitter origami sheets"
  },
  {
-  "id": "O04",
-  "name": "50ct Shatter-Resistant Round Christmas Tree Ornament Set Red/Gold (Wondershop)",
-  "category": "Ornaments",
-  "placements": [
-   "Window",
-   "Interior",
-   "Counter"
-  ],
-  "palette": [
-   "red",
-   "gold"
-  ],
-  "vendor": "Target",
-  "url": "https://www.target.com/p/50ct-shatter-resistant-round-christmas-tree-ornament-set-red-gold-wondershop-8482-durable-indoor-decor/-/A-84718910",
-  "price": 15.0,
-  "description": "50 shatter-resistant round ornaments in red and gold"
- },
- {
-  "id": "O05",
-  "name": "50ct Shatter-Resistant Round Christmas Tree Ornament Set Red/Gold/Pink/Green (Wondershop)",
-  "category": "Ornaments",
-  "placements": [
-   "Window",
-   "Interior",
-   "Counter"
-  ],
-  "palette": [
-   "red",
-   "gold",
-   "green",
-   "pink"
-  ],
-  "vendor": "Target",
-  "url": "https://www.target.com/p/50ct-christmas-tree-ornament-set-red-gold-pink-green-wondershop-8482/-/A-93490648",
-  "price": 15.0,
-  "description": "50 shatter-resistant round ornaments in red, gold, pink and green"
- },
- {
   "id": "T02",
   "name": "24\" Mini Tinsel Artificial Tree, Champagne (Wondershop)",
   "category": "Tabletop",
@@ -612,7 +753,14 @@
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B0DBZ3NWYQ",
   "price": 30.99,
-  "description": "24 in pre-lit green tree with warm white LED lights and gold base"
+  "description": "24 in pre-lit green tree with warm white LED lights and gold base",
+  "options": {
+   "label": "Lights",
+   "choices": [
+    "Warm lights",
+    "Multi-color lights"
+   ]
+  }
  },
  {
   "id": "T06",
@@ -627,7 +775,15 @@
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B0CBWZ736T",
   "price": 26.99,
-  "description": "3 ft unlit green tree with hinged metal branches and foldable base"
+  "description": "3 ft unlit green tree with hinged metal branches and foldable base",
+  "options": {
+   "label": "Color",
+   "choices": [
+    "Green",
+    "Pink",
+    "White"
+   ]
+  }
  },
  {
   "id": "H04",
@@ -644,7 +800,19 @@
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B08MJ8SRHG",
   "price": 9.99,
-  "description": "2 metallic foil fringe tinsel curtains, 3.2 ft x 8.2 ft each, adhesive tape to hang"
+  "description": "2 metallic foil fringe tinsel curtains, 3.2 ft x 8.2 ft each, adhesive tape to hang. Choose a color",
+  "options": {
+   "label": "Color",
+   "choices": [
+    "Lilac pink",
+    "Black/Gold",
+    "Black/Red",
+    "Gold",
+    "Silver/Blue",
+    "Orange",
+    "Pure silver"
+   ]
+  }
  },
  {
   "id": "O06",
@@ -661,7 +829,24 @@
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B09MW87J57",
   "price": 14.99,
-  "description": "20 silver mirrored disco ball ornaments in assorted sizes, each with a hook, plus elastic thread"
+  "description": "20 silver mirrored disco ball ornaments in assorted sizes, each with a hook, plus elastic thread",
+  "options": {
+   "label": "Color",
+   "choices": [
+    {
+     "name": "Silver",
+     "price": 14.99
+    },
+    {
+     "name": "Pink",
+     "price": 20.99
+    },
+    {
+     "name": "Silver 2",
+     "price": 14.99
+    }
+   ]
+  }
  },
  {
   "id": "G07",

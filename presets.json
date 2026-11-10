@@ -31,15 +31,18 @@
   "items": [
    {
     "id": "L02",
-    "qty": 1
+    "qty": 1,
+    "option": "Warm white"
    },
    {
     "id": "H01",
-    "qty": 1
+    "qty": 1,
+    "option": "White"
    },
    {
-    "id": "O04",
-    "qty": 1
+    "id": "O01",
+    "qty": 1,
+    "option": "Red/Gold"
    },
    {
     "id": "C02",
@@ -79,7 +82,8 @@
   "items": [
    {
     "id": "L02",
-    "qty": 2
+    "qty": 2,
+    "option": "Warm white"
    },
    {
     "id": "G02",
@@ -95,11 +99,13 @@
   "items": [
    {
     "id": "H02",
-    "qty": 1
+    "qty": 1,
+    "option": "White"
    },
    {
-    "id": "O04",
-    "qty": 1
+    "id": "O01",
+    "qty": 1,
+    "option": "Red/Gold"
    },
    {
     "id": "L01",
@@ -107,7 +113,8 @@
    },
    {
     "id": "R04",
-    "qty": 1
+    "qty": 1,
+    "option": "Turquoise blue"
    }
   ]
  },
@@ -119,11 +126,13 @@
   "items": [
    {
     "id": "H01",
-    "qty": 2
+    "qty": 2,
+    "option": "White"
    },
    {
     "id": "H02",
-    "qty": 2
+    "qty": 2,
+    "option": "White"
    }
   ]
  },

@@ -188,7 +188,22 @@
   if ($("biz").value) setTimeout(() => checkDup(), 0);
 
   let cart = {}, placement = "All", category = "All", vendor = "All", query = "";
-  try { const s = JSON.parse(localStorage.getItem(KEY) || "{}"); for (const k in s) if (byId[k] && avail(byId[k]) && s[k] > 0) cart[k] = Math.min(s[k], cap(byId[k])); } catch (e) {}
+  // Cart keys are the item id, or "id|option" for items with a color (or other) option.
+  const splitKey = k => { const n = k.indexOf("|"); return n < 0 ? [k, ""] : [k.slice(0, n), k.slice(n + 1)]; };
+  const keyOf = (i, opt) => opt ? i.id + "|" + opt : i.id;
+  const optName = c => typeof c === "string" ? c : c.name;
+  const choices = i => ((i.options && i.options.choices) || []).map(optName);
+  const isText = i => !!(i.options && i.options.text);
+  const optLabel = i => (i.options && i.options.label) || "Color";
+  // A choice can carry its own price: {"name": "Gold", "price": 12.99}. Otherwise the item price applies.
+  const priceOf = (i, opt) => { const c = ((i.options && i.options.choices) || []).find(x => optName(x) === opt); return c && typeof c === "object" && typeof c.price === "number" ? c.price : i.price; };
+  const validOpt = (i, opt) => !i.options ? opt === "" : isText(i) ? (opt.trim() !== "" && opt.length <= 60) : choices(i).includes(opt);
+  const used = (id, except) => Object.keys(cart).reduce((n, k) => splitKey(k)[0] === id && k !== except ? n + cart[k] : n, 0);
+  const defOpt = i => i.options && !isText(i) ? choices(i)[0] : "";
+  const presetOpt = (c, i) => c.option || defOpt(i);
+  const sel = {};
+  items.forEach(i => { sel[i.id] = defOpt(i) || ""; });
+  try { const s = JSON.parse(localStorage.getItem(KEY) || "{}"); for (const k in s) { const [id, opt] = splitKey(k), it = byId[id]; if (it && avail(it) && s[k] > 0 && validOpt(it, opt)) cart[k] = Math.min(s[k], cap(it) - used(id, k)); } } catch (e) {}
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (e) {} };
 
   const cats = ["All", ...new Set(items.map(i => i.category))];
@@ -202,31 +217,35 @@
   const matches = i => {
     const words = query.toLowerCase().split(/\s+/).filter(Boolean);
     if (!words.length) return true;
-    const hay = [i.name, i.description, i.category, i.vendor, ...(i.palette || []), ...(i.placements || [])].join(" ").toLowerCase();
+    const hay = [i.name, i.description, i.category, i.vendor, ...(i.palette || []), ...(i.placements || []), ...choices(i)].join(" ").toLowerCase();
     return words.every(w => hay.includes(w));
   };
 
-  const total = () => Object.keys(cart).reduce((s, k) => s + cart[k] * byId[k].price, 0);
+  const total = () => Object.keys(cart).reduce((s, k) => { const [id, opt] = splitKey(k); return s + cart[k] * priceOf(byId[id], opt); }, 0);
   const say = t => { $("note").textContent = t; };
 
-  function setQty(i, q) {
-    q = Math.max(0, Math.min(cap(i), q));
-    const delta = (q - (cart[i.id] || 0)) * i.price;
+  function setQty(i, opt, q) {
+    if (q > 0 && !validOpt(i, opt)) { say(isText(i) ? "Type the " + optLabel(i).toLowerCase() + " you want first." : "Choose a " + optLabel(i).toLowerCase() + " first."); return; }
+    const k = keyOf(i, opt), cur = cart[k] || 0;
+    q = Math.max(0, Math.min(cap(i) - used(i.id, k), q));
+    const delta = (q - cur) * priceOf(i, opt);
     if (delta > 0 && total() + delta > B + 0.001) { say("That would go over the " + money(B) + " catalog budget. Remove something first."); return; }
-    if (q === 0) delete cart[i.id]; else cart[i.id] = q;
+    if (q === 0) delete cart[k]; else cart[k] = q;
     save(); say(""); renderGrid(); renderBar();
   }
 
   function addPreset(p) {
-    const skipped = []; let cost = 0; const plan = [];
+    const skipped = []; let cost = 0; const plan = [], planned = {};
     p.items.forEach(c => {
       const i = byId[c.id];
       if (!i || !avail(i)) { skipped.push(i ? i.name : c.id); return; }
-      const q = Math.min(c.qty, cap(i) - (cart[i.id] || 0));
-      if (q > 0) { plan.push([i, q]); cost += q * i.price; }
+      const opt = presetOpt(c, i);
+      if (!validOpt(i, opt)) { skipped.push(i.name); return; }
+      const q = Math.min(c.qty, cap(i) - used(i.id) - (planned[i.id] || 0));
+      if (q > 0) { plan.push([i, opt, q]); planned[i.id] = (planned[i.id] || 0) + q; cost += q * priceOf(i, opt); }
     });
     if (total() + cost > B + 0.001) { say("The " + p.name + " set needs " + money(cost) + " but only " + money(B - total()) + " is left. Remove some items first."); return; }
-    plan.forEach(([i, q]) => { cart[i.id] = (cart[i.id] || 0) + q; });
+    plan.forEach(([i, opt, q]) => { const k = keyOf(i, opt); cart[k] = (cart[k] || 0) + q; });
     save(); renderGrid(); renderBar();
     say("Added the " + p.name + " set (" + money(cost) + ")." + (skipped.length ? " Not included, currently unavailable: " + skipped.join(", ") + "." : ""));
   }
@@ -234,7 +253,7 @@
   function renderSets() {
     $("sets").innerHTML = "";
     presets.forEach(p => {
-      const cost = p.items.reduce((s, c) => s + (byId[c.id] && avail(byId[c.id]) ? byId[c.id].price * c.qty : 0), 0);
+      const cost = p.items.reduce((s, c) => s + (byId[c.id] && avail(byId[c.id]) ? priceOf(byId[c.id], presetOpt(c, byId[c.id])) * c.qty : 0), 0);
       const d = document.createElement("div"); d.className = "set";
       const n = document.createElement("strong"); n.textContent = p.name;
       const ds = document.createElement("div"); ds.className = "desc"; ds.textContent = p.blurb;
@@ -253,8 +272,8 @@
       const i = byId[c.id]; if (!i) return;
       const li = document.createElement("li");
       const row = document.createElement("div"); row.className = "row";
-      const nm = document.createElement("strong"); nm.textContent = (c.qty > 1 ? c.qty + " × " : "") + i.name;
-      const pr = document.createElement("span"); pr.className = "price"; pr.textContent = money(i.price * c.qty);
+      const nm = document.createElement("strong"); nm.textContent = (c.qty > 1 ? c.qty + " × " : "") + i.name + (i.options ? " (" + optLabel(i) + ": " + presetOpt(c, i) + ")" : "");
+      const pr = document.createElement("span"); pr.className = "price"; pr.textContent = money(priceOf(i, presetOpt(c, i)) * c.qty);
       row.append(nm, pr);
       const ds = document.createElement("div"); ds.className = "desc"; ds.textContent = i.description || "";
       li.append(row, ds);
@@ -291,13 +310,35 @@
       tg.textContent = (i.vendor || "") + (i.max ? " · limited, max " + i.max : "");
       if (i.url) { const a = document.createElement("a"); a.href = i.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = "View product"; tg.append(" · ", a); }
       const q = document.createElement("div"); q.className = "qty";
+      let optRow = null, nEl = null;
+      const curOpt = () => i.options ? (sel[i.id] || "").trim() : "";
+      if (on && i.options) {
+        optRow = document.createElement("div"); optRow.className = "optrow"; optRow.style.cssText = "margin:.4rem 0";
+        const lab = document.createElement("label"); lab.textContent = optLabel(i) + ": "; lab.style.cssText = "font-size:.85rem;color:var(--muted)";
+        let ctl;
+        if (isText(i)) {
+          ctl = document.createElement("input"); ctl.type = "text"; ctl.maxLength = 60; ctl.value = sel[i.id] || ""; ctl.placeholder = i.options.placeholder || "Type the " + optLabel(i).toLowerCase() + " you want";
+          ctl.oninput = () => { sel[i.id] = ctl.value.replace(/\|/g, "/"); if (nEl) nEl.textContent = cart[keyOf(i, curOpt())] || 0; };
+        } else {
+          ctl = document.createElement("select");
+          choices(i).forEach(c => ctl.add(new Option(priceOf(i, c) !== i.price ? c + " (" + money(priceOf(i, c)) + ")" : c, c)));
+          ctl.value = sel[i.id]; ctl.onchange = () => { sel[i.id] = ctl.value; renderGrid(); };
+        }
+        ctl.style.cssText = "width:100%;margin-top:.2rem"; ctl.setAttribute("aria-label", optLabel(i) + " for " + i.name);
+        lab.appendChild(ctl); optRow.appendChild(lab);
+      }
       if (on) {
-        const m = document.createElement("button"); m.textContent = "−"; m.setAttribute("aria-label", "Remove one " + i.name); m.onclick = () => setQty(i, (cart[i.id] || 0) - 1);
-        const n = document.createElement("span"); n.textContent = cart[i.id] || 0;
-        const p = document.createElement("button"); p.textContent = "+"; p.setAttribute("aria-label", "Add one " + i.name); p.onclick = () => setQty(i, (cart[i.id] || 0) + 1);
+        const cartQty = () => cart[keyOf(i, curOpt())] || 0;
+        const m = document.createElement("button"); m.textContent = "−"; m.setAttribute("aria-label", "Remove one " + i.name); m.onclick = () => setQty(i, curOpt(), cartQty() - 1);
+        const n = document.createElement("span"); n.textContent = cartQty(); nEl = n;
+        const p = document.createElement("button"); p.textContent = "+"; p.setAttribute("aria-label", "Add one " + i.name); p.onclick = () => setQty(i, curOpt(), cartQty() + 1);
         q.append(m, n, p);
+        if (i.options) {
+          const inCart = Object.keys(cart).filter(x => splitKey(x)[0] === i.id).map(x => cart[x] + " × " + splitKey(x)[1]);
+          if (inCart.length) { const t = document.createElement("div"); t.className = "tag"; t.style.marginTop = ".3rem"; t.textContent = "In your order: " + inCart.join(", "); q.appendChild(t); }
+        }
       } else { const u = document.createElement("span"); u.className = "tag"; u.textContent = "Currently unavailable"; q.appendChild(u); }
-      d.append(img, name, meta, ds, tg, q); $("grid").appendChild(d);
+      d.append(img, name, meta, ds, tg); if (optRow) d.appendChild(optRow); d.appendChild(q); $("grid").appendChild(d);
     });
   }
 
@@ -310,7 +351,10 @@
   $("clear").onclick = () => { cart = {}; save(); say(""); renderGrid(); renderBar(); };
 
   const subs = {};
-  const lines = () => Object.keys(cart).map(k => ({ id: k, name: byId[k].name, vendor: byId[k].vendor || "", price: byId[k].price, url: byId[k].url || "", qty: cart[k], subOk: subs[k] !== false }));
+  const lines = () => Object.keys(cart).map(k => {
+    const [id, opt] = splitKey(k), it = byId[id];
+    return { id: k, name: it.name + (opt ? " (" + optLabel(it) + ": " + opt + ")" : ""), option: opt, vendor: it.vendor || "", price: priceOf(it, opt), url: it.url || "", qty: cart[k], subOk: subs[k] !== false };
+  });
 
   $("review").onclick = async () => {
     $("review").disabled = true;
