@@ -65,7 +65,7 @@
   "vendor": "Michaels",
   "url": "https://www.michaels.com/product/18ct-warm-white-led-string-lights-by-ashland-10233236",
   "price": 5.99,
-  "description": "18ct warm white LED string lights"
+  "description": "18ct warm white LED string lights, battery operated. 3 AA batteries NOT included"
  },
  {
   "id": "L02",
@@ -252,7 +252,7 @@
   ],
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B0H7J29Y6W",
-  "price": 9.99,
+  "price": 11.99,
   "description": "Washable window chalk markers"
  },
  {
@@ -299,20 +299,6 @@
   "url": "https://www.michaels.com/product/16-color-matte-acrylic-paint-value-pack-by-craft-smart-10437751",
   "price": 9.49,
   "description": "16 color acrylic paint"
- },
- {
-  "id": "C05",
-  "name": "Wet Paint Beginner Acrylic Painting Kit",
-  "category": "Craft supplies",
-  "placements": [
-   "Paint and create"
-  ],
-  "palette": [],
-  "vendor": "Wet Paint",
-  "url": "https://wetpaintart.com/wet-paint-beginner-acrylic-painting-kit/",
-  "price": 19.95,
-  "description": "Beginner acrylic painting kit",
-  "available": false
  },
  {
   "id": "L03",
@@ -381,6 +367,40 @@
   "description": "9 ft pre-lit pine bough garland with LED lights, indoor/outdoor, plug-in"
  },
  {
+  "id": "G05",
+  "name": "24\" Pre-Lit Glacier Fir Wreath (Ashland)",
+  "category": "Greenery",
+  "placements": [
+   "Exterior",
+   "Door"
+  ],
+  "palette": [
+   "green",
+   "white"
+  ],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/product/24-prelit-glacier-fir-wreath-by-ashland-10782320",
+  "price": 35.99,
+  "description": "24 inch battery-operated pre-lit fir wreath, battery operated, indoor or covered patio"
+ },
+ {
+  "id": "G06",
+  "name": "24\" Grapevine Wreath (Ashland)",
+  "category": "Greenery",
+  "placements": [
+   "Exterior",
+   "Door",
+   "Interior"
+  ],
+  "palette": [
+   "natural"
+  ],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/24in-grapevine-wreath-by-ashland/10375436.html",
+  "price": 11.99,
+  "description": "24 inch natural grapevine wreath, undecorated base for adding ribbon"
+ },
+ {
   "id": "R05",
   "name": "Large Wired Red Velvet Bow, 12\" x 18\" (Rocky Mountain Goods)",
   "category": "Ribbon",
@@ -395,24 +415,7 @@
   "vendor": "Amazon",
   "url": "https://www.amazon.com/Rocky-Mountain-Goods-Large-Wired/dp/B01N0KE1FA",
   "price": 13.95,
-  "description": "Large red wired velvet bow with attachment tie, listed indoor/outdoor and waterproof"
- },
- {
-  "id": "R06",
-  "name": "FUNARTY Red Velvet Christmas Bows, 6 Pack, 9\" x 12\"",
-  "category": "Ribbon",
-  "placements": [
-   "Exterior",
-   "Door",
-   "Window"
-  ],
-  "palette": [
-   "red"
-  ],
-  "vendor": "Amazon",
-  "url": "https://www.amazon.com/FUNARTY-Christmas-Waterproof-Decorative-Treetopper/dp/B0887W9BMR",
-  "price": 12.99,
-  "description": "6 premade red velvet bows, listed waterproof"
+  "description": "One large red wired velvet bow with attachment tie, listed indoor/outdoor and waterproof"
  },
  {
   "id": "L06",
@@ -428,7 +431,7 @@
   "vendor": "Amazon",
   "url": "https://www.amazon.com/clp/B01EDKGFGU",
   "price": 8.99,
-  "description": "12 battery-operated LED flickering tea lights"
+  "description": "12 battery-operated LED flickering tea lights. Batteries included"
  },
  {
   "id": "L07",
@@ -442,8 +445,8 @@
   ],
   "vendor": "Amazon",
   "url": "https://www.amazon.com/YAUNGEL-Operated-Christmas-Removable-Decorations/dp/B094V5F6H6",
-  "price": 39.98,
-  "description": "12 battery LED window candles with remote, timer and suction cups"
+  "price": 49.99,
+  "description": "12 battery LED window candles with remote, timer and suction cups. 2 AA Batteries not included"
  },
  {
   "id": "H03",
@@ -457,25 +460,8 @@
   ],
   "vendor": "Amazon",
   "url": "https://www.amazon.com/clp/B0FPMN678S",
-  "price": 7.99,
+  "price": 10.99,
   "description": "207 reusable static-cling snowflakes for glass, no glue"
- },
- {
-  "id": "O03",
-  "name": "24PCS Glitter Christmas Ornaments Set, Shatterproof, Blue Green",
-  "category": "Ornaments",
-  "placements": [
-   "Window",
-   "Interior",
-   "Counter"
-  ],
-  "palette": [
-   "teal"
-  ],
-  "vendor": "Amazon",
-  "url": "https://www.amazon.com/Christmas-Ornaments-Decorations-Shatterproof-Decorative/dp/B0DD12FGYK",
-  "price": 21.59,
-  "description": "24 shatterproof glitter ornaments in blue-green, multiple sizes"
  },
  {
   "id": "C06",
@@ -625,7 +611,7 @@
   ],
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B0DBZ3NWYQ",
-  "price": 19.99,
+  "price": 30.99,
   "description": "24 in pre-lit green tree with warm white LED lights and gold base"
  },
  {
@@ -640,7 +626,7 @@
   ],
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B0CBWZ736T",
-  "price": 19.98,
+  "price": 26.99,
   "description": "3 ft unlit green tree with hinged metal branches and foldable base"
  },
  {
@@ -676,5 +662,20 @@
   "url": "https://www.amazon.com/dp/B09MW87J57",
   "price": 14.99,
   "description": "20 silver mirrored disco ball ornaments in assorted sizes, each with a hook, plus elastic thread"
+ },
+ {
+  "id": "G07",
+  "name": "5ft Pre-Lit Bowen Pine Artificial Tree, Warm White LED (Ashland)",
+  "category": "Greenery",
+  "placements": [
+   "Interior"
+  ],
+  "palette": [
+   "green"
+  ],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/product/5ft-prelit-bowen-pine-artificial-christmas-tree-warm-white-led-lights-by-ashland-10772926",
+  "price": 99.99,
+  "description": "5 ft pre-lit artificial pine tree with warm white LED lights, indoor only"
  }
 ]
