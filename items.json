@@ -111,7 +111,7 @@
   "vendor": "Target",
   "url": "https://www.target.com/p/-/A-86214030",
   "price": 15.0,
-  "description": "50 shatter-resistant ornaments. Choose a color",
+  "description": "50 shatter-resistant ornaments",
   "options": {
    "label": "Color",
    "choices": [
@@ -152,7 +152,7 @@
   "vendor": "Michaels",
   "url": "https://www.michaels.com/product/50-pack-22-shatterproof-ball-ornaments-by-ashland-10821095",
   "price": 29.99,
-  "description": "50 shatterproof ornaments. Choose a color",
+  "description": "50 shatterproof ornaments",
   "options": {
    "label": "Color",
    "choices": [
@@ -800,7 +800,7 @@
   "vendor": "Amazon",
   "url": "https://www.amazon.com/dp/B08MJ8SRHG",
   "price": 9.99,
-  "description": "2 metallic foil fringe tinsel curtains, 3.2 ft x 8.2 ft each, adhesive tape to hang. Choose a color",
+  "description": "2 metallic foil fringe tinsel curtains, 3.2 ft x 8.2 ft each, adhesive tape to hang",
   "options": {
    "label": "Color",
    "choices": [
@@ -862,5 +862,278 @@
   "url": "https://www.michaels.com/product/5ft-prelit-bowen-pine-artificial-christmas-tree-warm-white-led-lights-by-ashland-10772926",
   "price": 99.99,
   "description": "5 ft pre-lit artificial pine tree with warm white LED lights, indoor only"
+ },
+ {
+  "id": "H05",
+  "name": "6ft Iridescent Tinsel Pom Pom Garland (Ashland)",
+  "category": "Hanging",
+  "placements": [
+   "Window",
+   "Interior"
+  ],
+  "palette": [
+   "silver"
+  ],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/product/6ft-iridescent-tinsel-pom-pom-garland-by-ashland-10824616",
+  "price": 4.19,
+  "description": "6 ft iridescent tinsel pom pom garland, indoor"
+ },
+ {
+  "id": "H06",
+  "name": "6ft Iridescent Snowflake Garland (Ashland)",
+  "category": "Hanging",
+  "placements": [
+   "Window",
+   "Interior"
+  ],
+  "palette": [
+   "silver",
+   "white"
+  ],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/product/6ft-iridescent-snowflake-garland-by-ashland-10824601",
+  "price": 14.99,
+  "description": "6 ft iridescent snowflake garland, indoor only"
+ },
+ {
+  "id": "H07",
+  "name": "6ft Clear Iridescent Shatterproof Bubble Ball Garland (Ashland)",
+  "category": "Hanging",
+  "placements": [
+   "Window",
+   "Interior"
+  ],
+  "palette": [
+   "silver"
+  ],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/product/6ft-clear-iridescent-shatterproof-bubble-ball-garland-by-ashland-10824576",
+  "price": 23.99,
+  "description": "6 ft shatterproof bubble ball garland, indoor"
+ },
+ {
+  "id": "H08",
+  "name": "6ft Iridescent Black Ball Ornament Garland (Ashland)",
+  "category": "Hanging",
+  "placements": [
+   "Window",
+   "Interior"
+  ],
+  "palette": [],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/product/6ft-iridescent-black-ball-ornament-garland-by-ashland-10810252",
+  "price": 8.8,
+  "description": "6 ft shatterproof ball ornament garland"
+ },
+ {
+  "id": "H09",
+  "name": "22' Wire Star Garland (Wondershop)",
+  "category": "Hanging",
+  "placements": [
+   "Window",
+   "Interior"
+  ],
+  "palette": [
+   "silver"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/-/A-87486151",
+  "price": 3.0,
+  "description": "22 ft wire star garland"
+ },
+ {
+  "id": "H10",
+  "name": "10' Wide Cut Tinsel Garland (Wondershop)",
+  "category": "Hanging",
+  "placements": [
+   "Window",
+   "Interior",
+   "Door"
+  ],
+  "palette": [
+   "gold",
+   "silver",
+   "red",
+   "green"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/-/A-1014409105",
+  "price": 6.0,
+  "description": "10 ft wide-cut tinsel garland",
+  "options": {
+   "label": "Color",
+   "choices": [
+    "Gold/Silver",
+    "Iridescent/Silver",
+    "Orange/Copper",
+    "Red/Green",
+    "Red/White"
+   ]
+  }
+ },
+ {
+  "id": "O07",
+  "name": "Clear Acrylic Snowflake Ornament (Wondershop)",
+  "category": "Ornaments",
+  "placements": [
+   "Window",
+   "Interior",
+   "Counter"
+  ],
+  "palette": [
+   "white"
+  ],
+  "vendor": "Target",
+  "url": "https://www.target.com/p/-/A-79531888",
+  "price": 3.0,
+  "description": "Clear acrylic snowflake ornament, indoor"
+ },
+ {
+  "id": "O08",
+  "name": "24 Pcs Krampus Wood Ornaments with Rope",
+  "category": "Ornaments",
+  "placements": [
+   "Interior",
+   "Counter"
+  ],
+  "palette": [],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B0D9B6PG1Y",
+  "price": 14.99,
+  "description": "24 wood Krampus ornaments in 12 designs, with hanging rope"
+ },
+ {
+  "id": "H11",
+  "name": "Krampus Postcard Garland Banner",
+  "category": "Hanging",
+  "placements": [
+   "Window",
+   "Interior"
+  ],
+  "palette": [],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B0FMYFX9YW",
+  "price": 9.99,
+  "description": "Vintage-style Krampus postcard garland banner"
+ },
+ {
+  "id": "O09",
+  "name": "Acrylic Krampus Ornament, about 4 inches",
+  "category": "Ornaments",
+  "placements": [
+   "Window",
+   "Interior",
+   "Counter"
+  ],
+  "palette": [],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B0FQ5SWZ3Y",
+  "price": 7.95,
+  "description": "Acrylic Krampus ornament, about 4 inches"
+ },
+ {
+  "id": "H12",
+  "name": "13ft Celestial Garland, moons, suns and stars",
+  "category": "Hanging",
+  "placements": [
+   "Window",
+   "Interior"
+  ],
+  "palette": [
+   "gold"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B0H1H72XMX",
+  "price": 14.99,
+  "description": "13 ft celestial hanging garland with moons, suns and stars"
+ },
+ {
+  "id": "O10",
+  "name": "12 Pcs Pagan Yule Metal Ornaments",
+  "category": "Ornaments",
+  "placements": [
+   "Window",
+   "Interior",
+   "Counter"
+  ],
+  "palette": [
+   "silver"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B0H98S51DJ",
+  "price": 15.99,
+  "description": "12 metal Yule ornaments in winter and rune designs, about 3.15 inches"
+ },
+ {
+  "id": "G08",
+  "name": "12 inch Yule Wreath with Crescent Moon",
+  "category": "Greenery",
+  "placements": [
+   "Door",
+   "Interior"
+  ],
+  "palette": [
+   "green"
+  ],
+  "vendor": "Amazon",
+  "url": "https://www.amazon.com/dp/B0H5K6W9DQ",
+  "price": 31.99,
+  "description": "12 inch handmade yule wreath with evergreen and crescent moon"
+ },
+ {
+  "id": "O11",
+  "name": "11\" Moon & Star Tree Topper (Ashland)",
+  "category": "Ornaments",
+  "placements": [
+   "Interior",
+   "Counter"
+  ],
+  "palette": [
+   "gold"
+  ],
+  "vendor": "Michaels",
+  "url": "https://www.michaels.com/product/11-gold-moon-star-tree-topper-by-ashland-10829030",
+  "price": 17.99,
+  "description": "11 inch moon and star tree topper"
+ },
+ {
+  "id": "H13",
+  "name": "Felt Ball Garland, 5 ft (Aitoh)",
+  "category": "Hanging",
+  "placements": [
+   "Window",
+   "Interior"
+  ],
+  "palette": [],
+  "vendor": "Wet Paint",
+  "url": "https://wetpaintart.com/felt-ball-garland-celebrate/",
+  "price": 16.1,
+  "description": "5 ft felt ball garland"
+ },
+ {
+  "id": "C09",
+  "name": "Unfinished Wooden Cutout Ornament (Wet Paint)",
+  "category": "Craft supplies",
+  "placements": [
+   "Interior",
+   "Counter"
+  ],
+  "palette": [
+   "natural"
+  ],
+  "vendor": "Wet Paint",
+  "url": "https://wetpaintart.com/wooden-snowflake-ornament/",
+  "price": 3.99,
+  "description": "Unfinished 3.5 inch basswood cutout ornament, ready to paint",
+  "options": {
+   "label": "Shape",
+   "choices": [
+    "Snowflake",
+    "Mitten",
+    "Heart",
+    "Oval"
+   ]
+  }
  }
 ]

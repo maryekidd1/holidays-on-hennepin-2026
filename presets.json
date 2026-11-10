@@ -159,5 +159,57 @@
     "qty": 1
    }
   ]
+ },
+ {
+  "id": "p-krampus",
+  "name": "Krampus",
+  "placement": "Theme",
+  "blurb": "Dark, folkloric decorations for a Krampus-themed storefront.",
+  "items": [
+   {
+    "id": "H08",
+    "qty": 1
+   },
+   {
+    "id": "H11",
+    "qty": 1
+   },
+   {
+    "id": "O08",
+    "qty": 1
+   },
+   {
+    "id": "O09",
+    "qty": 1
+   }
+  ]
+ },
+ {
+  "id": "p-solstice",
+  "name": "Solstice",
+  "placement": "Theme",
+  "blurb": "Moons, stars and evergreen for a winter solstice storefront.",
+  "items": [
+   {
+    "id": "H12",
+    "qty": 1
+   },
+   {
+    "id": "O10",
+    "qty": 1
+   },
+   {
+    "id": "G08",
+    "qty": 1
+   },
+   {
+    "id": "O11",
+    "qty": 1
+   },
+   {
+    "id": "H09",
+    "qty": 1
+   }
+  ]
  }
 ]
